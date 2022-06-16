@@ -1,0 +1,134 @@
+html, body{
+    margin: 0;
+    padding: 0;
+    font-family: Helvetica, sans-serif;
+    scroll-behavior: smooth;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+// generals
+.alignwide{
+    padding-right: 90px;
+    padding-left: 90px;
+}
+.wp-block-columns{
+    margin: 0;
+}
+
+.alignfull{
+    .wp-block-media-text{
+        .wp-block-media-text__content{
+            padding: 0 90px;
+        }
+    }
+}
+
+// header
+header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 90px;
+    height: 90px;
+    position: absolute;
+    width: 100%;
+    z-index: 10;
+    .logo-img{
+
+        img{
+            width: 150px;
+            height: auto;
+        }
+    }
+
+    .cont_menu{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: white;
+        height: 90px;
+        width: 50%;
+
+        .menu-menu-principal-container{
+            ul{
+                padding: 0;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                li{
+                    list-style: none;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    padding: 5px;
+                    margin: 5px;
+                    font-size: 12px;
+                    a{
+                        text-decoration: none;
+                        color: #8cc540;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+    }
+    .cont_search{
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 90px;
+        height: 90px;
+        background-color: #2e7b98;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        svg{
+            width: 20px;
+            height: 20px;
+            path{
+                fill: #8cc540;
+            }
+        }
+
+    }
+}
+// footer
+footer{
+    min-height: 300px;
+    background-color: #0e526c;
+    padding: 0 90px;
+    display: flex;
+    justify-content: stretch;
+    align-items: stretch;
+    flex-direction: row;
+    flex-wrap: row wrap;
+    .column{
+        flex: 1;
+        display: flex;
+        align-items: center;
+        p{
+            color: white;
+        }
+        a{
+            text-decoration: none;
+            color: white;
+        }
+
+        .widget{
+            width: 100%;
+            padding: 10px;
+        }
+        .menu{
+            list-style: none;
+            li{
+                margin: 10px 0;
+
+            }
+        }
+    }
+
+}
