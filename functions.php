@@ -3,7 +3,6 @@
  * IPA functions
  */
 
-
  function ipa_support(){
      add_theme_support('wp-block-styles');
      add_editor_style('style.css');
@@ -29,10 +28,24 @@
  }
 
  add_action('after_setup_theme', 'ipa_support');
- function ipa_scripts() {
-    wp_enqueue_style('generals', get_template_directory_uri().'/css/generals.css');
-}
 
+
+function ipa_scripts() {
+    wp_enqueue_style('generals', get_template_directory_uri().'/css/generals.css', [], 'all');
+
+    if(is_page_template( 'page-capacitacion.php' )){
+        wp_enqueue_style('capacitacion', get_template_directory_uri().'/css/capacitacion.css', [], 'all');
+    }
+
+
+    if(is_page_template( 'page-servicios.php' )){
+        wp_enqueue_style('servicios', get_template_directory_uri().'/css/servicios.css', [], 'all');
+    }
+
+    if(is_page_template( 'page-representacion.php' )){
+        wp_enqueue_style('representacion', get_template_directory_uri().'/css/representacion.css', [], 'all');
+    }
+}
 add_action('wp_enqueue_scripts', 'ipa_scripts');
 
 

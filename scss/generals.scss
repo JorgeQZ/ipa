@@ -36,6 +36,10 @@ header{
     position: absolute;
     width: 100%;
     z-index: 10;
+    &.not_sticked{
+        position: relative;
+        border-bottom: 1px solid #9fafba;
+    }
     .logo-img{
 
         img{
@@ -96,20 +100,41 @@ header{
 
     }
 }
+
+.banner-cont{
+    width: 100%;
+    height: 475px;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .title-banner{
+        font-size: 80px;
+        font-weight: bolder;
+        color: white;
+    }
+}
+
+.container{
+    padding: 0 90px;
+    max-width: 1280px;
+    margin: 0 auto;
+}
 // footer
 footer{
     min-height: 300px;
     background-color: #0e526c;
     padding: 0 90px;
     display: flex;
-    justify-content: stretch;
+    justify-content: space-between;
     align-items: stretch;
     flex-direction: row;
-    flex-wrap: row wrap;
+    flex-wrap: wrap;
     .column{
-        flex: 1;
         display: flex;
         align-items: center;
+        justify-content: space-between;
+        width: 20%;
         p{
             color: white;
         }
@@ -121,6 +146,47 @@ footer{
         .widget{
             width: 100%;
             padding: 10px;
+            form{
+                p{
+                    width: 100%;
+                    height: auto;
+                    margin: 0;
+                    display: flex;
+                    justify-content: center;
+                    flex-wrap: wrap;
+                    flex-direction: row;
+                    .wpcf7-form-control-wrap{
+                        width: calc(90% - 120px);
+                        min-width: 200px;
+                        display: inline-block;
+                        margin-right: 10px;
+                        input{
+                            appearance: none;
+                            height: 50px;
+                            border: 1px solid white;
+                            background-color: transparent;
+                            // min-width: 80px;
+                            width: 100%;
+                            text-align: center;
+                            color: white;
+                            margin: 5px ;
+                            &::placeholder{
+                                color: white;
+                            }
+                        }
+                    }
+                    input[type="submit"]{
+                        display: inline-block;
+                        appearance: none;
+                        width: 80px;
+                        border: 1px solid #8cc540;
+                        background-color: #8cc540;
+                        color: white;
+                        height: 50px;
+                        margin: 5px ;
+                    }
+                }
+            }
         }
         .menu{
             list-style: none;
@@ -132,3 +198,6 @@ footer{
     }
 
 }
+
+@import "contactform";
+@import "tabs";

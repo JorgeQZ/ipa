@@ -1,0 +1,44 @@
+.wpcf7{
+    // padding: 0 90px;
+    .contact_row{
+        display: flex;
+        justify-content: space-between;
+        margin: 0 auto;
+        max-width: 800px;
+        .wpcf7-form-control-wrap{
+            width:45%;
+            margin: 10px 0;
+
+            textarea, input{
+                appearance: none;
+                background-color: transparent;
+                border: none;
+                border-bottom: 1px solid #1f6166;
+                padding: 5px 0px;
+                font-size: 18px;
+                width: 100%;
+                font-family: Helvetica, sans-serif;
+                color: white;
+            }
+
+            input{
+                height: 40px;
+            }
+
+            ::placeholder{
+                color: #ffffff80;
+            }
+
+        }
+
+        input[type="submit"]{
+            appearance: none;
+            border: none;
+            background-color: #0e526c;
+            color: white;
+            padding: 8px 12px;
+            text-transform: uppercase;
+        }
+
+    }
+}

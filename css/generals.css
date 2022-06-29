@@ -40,6 +40,11 @@ header {
   z-index: 10;
 }
 
+header.not_sticked {
+  position: relative;
+  border-bottom: 1px solid #9fafba;
+}
+
 header .logo-img img {
   width: 150px;
   height: auto;
@@ -122,6 +127,33 @@ header .cont_search svg path {
   fill: #8cc540;
 }
 
+.banner-cont {
+  width: 100%;
+  height: 475px;
+  background-size: cover;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.banner-cont .title-banner {
+  font-size: 80px;
+  font-weight: bolder;
+  color: white;
+}
+
+.container {
+  padding: 0 90px;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
 footer {
   min-height: 300px;
   background-color: #0e526c;
@@ -129,9 +161,9 @@ footer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: stretch;
-      -ms-flex-pack: stretch;
-          justify-content: stretch;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-box-align: stretch;
       -ms-flex-align: stretch;
           align-items: stretch;
@@ -139,20 +171,21 @@ footer {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -ms-flex-wrap: row wrap;
-      flex-wrap: row wrap;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 footer .column {
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 20%;
 }
 
 footer .column p {
@@ -169,10 +202,269 @@ footer .column .widget {
   padding: 10px;
 }
 
+footer .column .widget form p {
+  width: 100%;
+  height: auto;
+  margin: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+footer .column .widget form p .wpcf7-form-control-wrap {
+  width: calc(90% - 120px);
+  min-width: 200px;
+  display: inline-block;
+  margin-right: 10px;
+}
+
+footer .column .widget form p .wpcf7-form-control-wrap input {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  height: 50px;
+  border: 1px solid white;
+  background-color: transparent;
+  width: 100%;
+  text-align: center;
+  color: white;
+  margin: 5px;
+}
+
+footer .column .widget form p .wpcf7-form-control-wrap input::-webkit-input-placeholder {
+  color: white;
+}
+
+footer .column .widget form p .wpcf7-form-control-wrap input:-ms-input-placeholder {
+  color: white;
+}
+
+footer .column .widget form p .wpcf7-form-control-wrap input::-ms-input-placeholder {
+  color: white;
+}
+
+footer .column .widget form p .wpcf7-form-control-wrap input::placeholder {
+  color: white;
+}
+
+footer .column .widget form p input[type="submit"] {
+  display: inline-block;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  width: 80px;
+  border: 1px solid #8cc540;
+  background-color: #8cc540;
+  color: white;
+  height: 50px;
+  margin: 5px;
+}
+
 footer .column .menu {
   list-style: none;
 }
 
 footer .column .menu li {
   margin: 10px 0;
+}
+
+.wpcf7 .contact_row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 0 auto;
+  max-width: 800px;
+}
+
+.wpcf7 .contact_row .wpcf7-form-control-wrap {
+  width: 45%;
+  margin: 10px 0;
+}
+
+.wpcf7 .contact_row .wpcf7-form-control-wrap textarea, .wpcf7 .contact_row .wpcf7-form-control-wrap input {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid #1f6166;
+  padding: 5px 0px;
+  font-size: 18px;
+  width: 100%;
+  font-family: Helvetica, sans-serif;
+  color: white;
+}
+
+.wpcf7 .contact_row .wpcf7-form-control-wrap input {
+  height: 40px;
+}
+
+.wpcf7 .contact_row .wpcf7-form-control-wrap ::-webkit-input-placeholder {
+  color: #ffffff80;
+}
+
+.wpcf7 .contact_row .wpcf7-form-control-wrap :-ms-input-placeholder {
+  color: #ffffff80;
+}
+
+.wpcf7 .contact_row .wpcf7-form-control-wrap ::-ms-input-placeholder {
+  color: #ffffff80;
+}
+
+.wpcf7 .contact_row .wpcf7-form-control-wrap ::placeholder {
+  color: #ffffff80;
+}
+
+.wpcf7 .contact_row input[type="submit"] {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border: none;
+  background-color: #0e526c;
+  color: white;
+  padding: 8px 12px;
+  text-transform: uppercase;
+}
+
+.tabs-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  margin-bottom: 80px;
+}
+
+.tabs-container .tabs {
+  width: 25%;
+  max-width: 200px;
+}
+
+.tabs-container .tabs .tab-item {
+  height: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-bottom: 1px solid green;
+  padding: 10px 0;
+  color: #31536b;
+  cursor: pointer;
+}
+
+.tabs-container .tabs-content {
+  color: #31536b;
+  padding: 30px 80px;
+}
+
+.tabs-container .tabs-content .tab-content {
+  display: none;
+}
+
+.tabs-container .tabs-content .tab-content.active {
+  display: block;
+}
+
+.tab-calendar-container {
+  width: 100%;
+  margin-bottom: 60px;
+}
+
+.tab-calendar-container .tab-calendar-dropdown {
+  width: 300px;
+  height: 70px;
+  font-size: 24px;
+  font-weight: bolder;
+  color: #31536b;
+  margin: 0 auto;
+  position: relative;
+}
+
+.tab-calendar-container .tab-calendar-dropdown .calendar-option-selected {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 70px;
+}
+
+.tab-calendar-container .tab-calendar-dropdown .calendar-menu {
+  width: 100%;
+  background-color: #fff;
+  position: absolute;
+  top: 100%;
+  margin: 0;
+  padding: 0;
+  display: none;
+}
+
+.tab-calendar-container .tab-calendar-dropdown .calendar-menu .calendar-option {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  list-style: none;
+  text-align: center;
+  height: 50px;
+  cursor: pointer;
+}
+
+.tab-calendar-container .tab-calendar .calendar {
+  width: 100%;
+  border: none;
+}
+
+.tab-calendar-container .tab-calendar .calendar thead {
+  height: 80px;
+}
+
+.tab-calendar-container .tab-calendar .calendar thead th {
+  font-size: 20px;
+  text-transform: uppercase;
+  border-top: 1px solid #9ec44e;
+  color: #31536b;
+}
+
+.tab-calendar-container .tab-calendar .calendar tbody tr td {
+  font-size: 16px;
+  font-weight: bold;
+  border-top: 1px solid #9ec44e;
+  text-align: center;
+  height: 70px;
+  color: #b7bac8;
+}
+
+.tab-calendar-container .tab-calendar .calendar tbody tr:last-child td {
+  border-bottom: 1px solid #9ec44e;
 }

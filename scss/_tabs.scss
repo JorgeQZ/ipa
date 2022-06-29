@@ -1,0 +1,103 @@
+.tabs-container{
+    display: flex;
+    align-items: flex-start;
+    justify-content: start;
+    margin-bottom: 80px;
+    .tabs{
+        width: 25%;
+        max-width: 200px;
+        .tab-item{
+            height: 50px;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            border-bottom: 1px solid green;
+            padding: 10px 0;
+            color: #31536b;
+            cursor: pointer;
+        }
+    }
+
+    .tabs-content{
+        color: #31536b;
+        padding: 30px 80px;
+        .tab-content{
+            display: none;
+            &.active{
+                display: block;
+            }
+        }
+    }
+
+}
+
+.tab-calendar-container{
+    width: 100%;
+    margin-bottom: 60px;
+    .tab-calendar-dropdown{
+        width: 300px;
+        height: 70px;
+        font-size: 24px;
+        font-weight: bolder;
+        color: #31536b;
+        margin: 0 auto;
+        position: relative;
+
+        .calendar-option-selected{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 70px;
+        }
+        .calendar-menu{
+            width: 100%;
+            background-color: #fff;
+            position: absolute;
+            top: 100%;
+            margin: 0;
+            padding: 0;
+            display: none;
+            .calendar-option{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                list-style: none;
+                text-align: center;
+                height: 50px;
+                cursor: pointer;
+            }
+        }
+    }
+    .tab-calendar{
+        .calendar{
+            width: 100%;
+            border: none;
+            thead{
+                height: 80px;
+                th{
+                    font-size: 20px;
+                    text-transform: uppercase;
+                    border-top: 1px solid #9ec44e;
+                    color: #31536b;
+                }
+            }
+            tbody{
+                tr{
+                    td{
+                        font-size: 16px;
+                        font-weight: bold;
+                        border-top: 1px solid #9ec44e;
+                        text-align: center;
+                        height: 70px;
+                        color: #b7bac8;
+                    }
+                    &:last-child{
+                        td{
+                            border-bottom: 1px solid #9ec44e;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

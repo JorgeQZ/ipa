@@ -1,0 +1,98 @@
+.form-container{
+    padding: 60px 90px;
+    background-color: #8cc540;
+    min-height: 400px;
+
+    .head-form{
+        color: white;
+        font-size: 30px;
+        font-weight: bold;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+    .wpcf7{
+        max-width: 600px;
+        margin: 0 auto;
+        .row{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            .wpcf7-form-control-wrap{
+                width: 45%;
+                margin-bottom: 10px;
+                input{
+                    appearance: none;
+                    height: 40px;
+                    width: 100%;
+                    border: none;
+                    padding: 30px 0;
+                    font-size: 20px;
+                    background: transparent;
+                    border-bottom: 1px solid #559353;
+                    color: white;
+                    &::placeholder{
+                        color: rgba(white,0.5);
+                    }
+                }
+                select{
+                    appearance: none;
+                    background: #0000;
+                    width: 100%;
+                    height: 60px;
+                    padding: 10px 0;
+                    color: #fff;
+                    font-size: 20px;
+                    border: none;
+                    border-bottom: 1px solid #559353;
+
+                        color: rgba(white,0.5);
+
+                }
+            }
+        }
+
+        .groups{
+            padding: 20px 0;
+            .wpcf7-list-item{
+                margin: 0;
+                margin-right: 20px;
+                label{
+                    display: flex;
+                    align-items: center;
+                    justify-self: start;
+                    input[type="checkbox"]{
+                        appearance: none;
+                        width: 17px;
+                        height: 17px;
+                        margin: 0;
+                        margin-right: 5px;
+                        background-color: rgba(white, 0.5);
+                        border-radius: 50%;
+                        border: 1px solid rgba(white, 0.5);
+                        transition: all 300ms;
+                        box-shadow: inset 0px 0px 0px 3px #8cc540;
+                        &:checked{
+                            background-color: rgba(white, 1);
+                            border: 1px solid rgba(white, 1);
+
+                        }
+                    }
+                    .wpcf7-list-item-label{
+                        color: white;
+                        font-size: 20px;
+
+                    }
+                }
+            }
+        }
+        input[type="submit"]{
+            appearance: none;
+            background-color: #0e526c;
+            color: white;
+            border: none;
+            font-size: 18px;
+            text-transform: uppercase;
+            padding: 12px 30px;
+        }
+    }
+}

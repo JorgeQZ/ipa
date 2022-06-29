@@ -9,7 +9,7 @@
 
 <body>
 
-    <header>
+    <header class="<?php if(!is_front_page(  )) { echo 'not_sticked'; }?>">
         <div class="logo-img">
             <?php the_custom_logo('logo-header'); ?>
         </div>
