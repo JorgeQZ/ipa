@@ -143,7 +143,7 @@ header .cont_search svg path {
 }
 
 .banner-cont .title-banner {
-  font-size: 80px;
+  font-size: 4rem;
   font-weight: bolder;
   color: white;
 }
@@ -154,10 +154,16 @@ header .cont_search svg path {
   margin: 0 auto;
 }
 
+@media screen and (max-width: 767px) {
+  .container {
+    padding: 0 20px;
+  }
+}
+
 footer {
   min-height: 300px;
   background-color: #0e526c;
-  padding: 0 90px;
+  padding: 30px 90px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -275,6 +281,18 @@ footer .column .menu {
 
 footer .column .menu li {
   margin: 10px 0;
+}
+
+@media screen and (max-width: 767px) {
+  footer {
+    padding: 30px 20px;
+  }
+  footer .column {
+    min-width: 300px;
+  }
+  footer .column p {
+    padding-left: 40px;
+  }
 }
 
 .wpcf7 .contact_row {

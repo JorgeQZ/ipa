@@ -41,7 +41,7 @@ get_header();
             <div class="grid-item"><img src="<?php echo get_template_directory_uri().'/img/logo/cydsa.jpg'; ?>" alt=""></div>
             <div class="grid-item"><img src="<?php echo get_template_directory_uri().'/img/logo/deacero.jpg'; ?>" alt=""></div>
             <div class="grid-item"><img src="<?php echo get_template_directory_uri().'/img/logo/femsa.jpg'; ?>" alt=""></div>
-            <div class="grid-item"><img src="<?php echo get_template_directory_uri().'/img/logo/copamex.jpg'; ?>" alt=""></div>
+            <div class="grid-item"><img src="<?php echo get_template_directory_uri().'/img/logo/copamex.png'; ?>" alt=""></div>
             <div class="grid-item"><img src="<?php echo get_template_directory_uri().'/img/logo/heineken.jpg'; ?>" alt=""></div>
             <div class="grid-item"><img src="<?php echo get_template_directory_uri().'/img/logo/grupotq.jpg'; ?>" alt=""></div>
             <div class="grid-item"><img src="<?php echo get_template_directory_uri().'/img/logo/ternium.jpg'; ?>" alt=""></div>
@@ -80,6 +80,63 @@ get_header();
                     Comisión de Sustentabilidad
                 </div>
             </div>
+        </div>
+    </div>
+
+    <div class="text-img">
+        <div class="cont-img">
+            <img src="<?php echo get_template_directory_uri(  ).'/img/stock-photo-inspector-engineer-woman-holding-digital-tablet-working-in-solar-panels-power-farm-photovoltaic-19080799241.png'?>" alt="">
+        </div>
+        <div class="text bg-blue">
+            Consejo Nacional de la Agenda<br>2030 para el Desarrollo Sostenible
+        </div>
+    </div>
+    <div class="text-img ltr">
+        <div class="cont-img">
+            <img src="<?php echo get_template_directory_uri(  ).'/img/stock-photo-inspector-engineer-woman-holding-digital-tablet-working-in-solar-panels-power-farm-photovoltaic-19080799241.png'?>" alt="">
+        </div>
+        <div class="text">
+            Consejo Nacional de la Agenda<br>2030 para el Desarrollo Sostenible
+        </div>
+    </div>
+    <div class="text-img">
+        <div class="cont-img">
+            <img src="<?php echo get_template_directory_uri(  ).'/img/stock-photo-inspector-engineer-woman-holding-digital-tablet-working-in-solar-panels-power-farm-photovoltaic-19080799241.png'?>" alt="">
+        </div>
+        <div class="text bg-green">
+            Consejo Nacional de la Agenda<br>2030 para el Desarrollo Sostenible
+        </div>
+    </div>
+    <div class="text-img ltr">
+        <div class="cont-img">
+            <img src="<?php echo get_template_directory_uri(  ).'/img/stock-photo-inspector-engineer-woman-holding-digital-tablet-working-in-solar-panels-power-farm-photovoltaic-19080799241.png'?>" alt="">
+        </div>
+        <div class="text">
+            Consejo Nacional de la Agenda<br>2030 para el Desarrollo Sostenible
+        </div>
+    </div>
+    <div class="text-img">
+        <div class="cont-img">
+            <img src="<?php echo get_template_directory_uri(  ).'/img/stock-photo-inspector-engineer-woman-holding-digital-tablet-working-in-solar-panels-power-farm-photovoltaic-19080799241.png'?>" alt="">
+        </div>
+        <div class="text bg-blue">
+            Consejo Nacional de la Agenda<br>2030 para el Desarrollo Sostenible
+        </div>
+    </div>
+    <div class="text-img ltr">
+        <div class="cont-img">
+            <img src="<?php echo get_template_directory_uri(  ).'/img/stock-photo-inspector-engineer-woman-holding-digital-tablet-working-in-solar-panels-power-farm-photovoltaic-19080799241.png'?>" alt="">
+        </div>
+        <div class="text">
+            Consejo Nacional de la Agenda<br>2030 para el Desarrollo Sostenible
+        </div>
+    </div>
+    <div class="text-img">
+        <div class="cont-img">
+            <img src="<?php echo get_template_directory_uri(  ).'/img/stock-photo-inspector-engineer-woman-holding-digital-tablet-working-in-solar-panels-power-farm-photovoltaic-19080799241.png'?>" alt="">
+        </div>
+        <div class="text bg-green">
+            Consejo Nacional de la Agenda<br>2030 para el Desarrollo Sostenible
         </div>
     </div>
 </div>

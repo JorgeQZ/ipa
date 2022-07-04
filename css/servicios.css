@@ -85,13 +85,13 @@
 }
 
 .category-list .grid .item:hover {
-  border-color: #9ec44e;
+  border-color: #8cc540;
   -webkit-transform: translateY(-30px);
           transform: translateY(-30px);
 }
 
 .category-list .grid .item:hover .icon {
-  background-color: #9ec44e;
+  background-color: #8cc540;
 }
 
 .category-list .grid .item:hover .icon svg {
@@ -108,5 +108,5 @@
 }
 
 .category-list .grid .item:hover .desc {
-  color: #9ec44e;
+  color: #8cc540;
 }

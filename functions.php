@@ -45,6 +45,14 @@ function ipa_scripts() {
     if(is_page_template( 'page-representacion.php' )){
         wp_enqueue_style('representacion', get_template_directory_uri().'/css/representacion.css', [], 'all');
     }
+
+    if(is_page_template( 'page-gaceta.php' )){
+        wp_enqueue_style('gaceta', get_template_directory_uri().'/css/gaceta.css', [], 'all');
+    }
+
+    if(is_singular( 'gaceta' )){
+        wp_enqueue_style('gaceta-single', get_template_directory_uri().'/css/gaceta-single.css', [], 'all');
+    }
 }
 add_action('wp_enqueue_scripts', 'ipa_scripts');
 
@@ -104,4 +112,40 @@ function ipa_widgets() {
 }
 
 add_action( 'widgets_init', 'ipa_widgets' );
+
+
+// GACETA
+
+add_action( 'init', 'ipa_posttype_gaceta' );
+
+function ipa_posttype_gaceta(){
+    $labels = array(
+        'name'                => __('Gaceta'),
+        'singular_name'       => __('Gaceta'),
+        'add_new'             => __('Agregar nuevo post'),
+        'add_new_item'        => __('Agregar nuevo post'),
+        'edit_item'           => __('Editar post'),
+        'add_new'             => __('Agregar nuevo post'),
+        'all_items'           => __('Todos los posts'),
+        'view_item'           => __('Ver posts'),
+        'search_items'        => __('Buscar posts'),
+        'not_found'           => __('No se han encontrado posts de gaceta.'),
+		'not_found_in_trash'  => __('No se han encontrado posts de gaceta en la papelera')
+    );
+
+
+    $args = array(
+        'labels'            => $labels,
+        'description'       => '',
+        'public'            => true,
+        'menu_position'     => 5,
+        'supports'          => array( 'title', 'thumbnail', 'excerpt'),
+        'has_archive'       => true,
+        'show_in_admin_bar' => true,
+        'show_in_nav_menus' => true,
+        'query_var'         => 'gaceta'
+      );
+
+      register_post_type( 'gaceta', $args);
+}
 ?>

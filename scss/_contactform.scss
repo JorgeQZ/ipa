@@ -1,3 +1,5 @@
+@import "variables";
+
 .wpcf7{
     // padding: 0 90px;
     .contact_row{
@@ -34,7 +36,7 @@
         input[type="submit"]{
             appearance: none;
             border: none;
-            background-color: #0e526c;
+            background-color: $azul;
             color: white;
             padding: 8px 12px;
             text-transform: uppercase;
