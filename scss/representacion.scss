@@ -17,7 +17,7 @@
         margin: 0 auto;
 
         .title{
-            font-size: 28px;
+            font-size: $title;
             color: $verde;
             font-weight: bold;
         }
@@ -39,6 +39,12 @@
     }
 }
 
+.grid-title{
+    font-size: $title;
+    font-weight: bold;
+    text-align: center;
+    color: $azul;
+}
 .grid-cont{
     display: flex;
     align-items: stretch;
@@ -132,7 +138,7 @@
         }
 
         flex: 1 0 50%;
-        font-size: 30px;
+        font-size: $title;
         font-weight: bold;
         display: flex;
         align-items: center;

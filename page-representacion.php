@@ -30,7 +30,7 @@ get_header();
     </div>
 
     <div class="container">
-        <p style="font-size: 30px; color: #0e526c; text-align: center; font-weight: bold; ">Integrantes del Consejo IPA</p>
+        <p class="grid-title">Integrantes del Consejo IPA</p>
         <div class="grid-cont">
             <div class="grid-item"><img src="<?php echo get_template_directory_uri().'/img/logo/alen.jpg'; ?>" alt=""></div>
             <div class="grid-item"><img src="<?php echo get_template_directory_uri().'/img/logo/alfa.jpg'; ?>" alt=""></div>

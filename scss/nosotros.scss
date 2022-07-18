@@ -1,0 +1,130 @@
+@import "variables";
+
+.main-content{
+    padding-bottom: 100px;
+}
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img{
+        margin: 0 auto;
+        max-width: 100%;
+    }
+}
+.text-cont{
+    background-color: $verde;
+    .container{
+        width: 100%;
+        max-width: 100%;
+        display: flex;
+        align-items: stretch;
+        margin: 0;
+        padding: 0;
+
+        .column{
+            width: 50%;
+            &:nth-child(1){
+                padding: 60px;
+            }
+            &:nth-child(2){
+                background-size: cover;
+                opacity: 0.6;
+            }
+            .title, .desc{
+            color: white;
+            }
+
+            .title{
+                margin-top: 40px;
+                margin-bottom: 20px;
+                font-size: $title;
+                font-weight: bold;
+                line-height: 1;
+            }
+            .desc{
+                font-size: 18px;
+                margin-bottom: 40px;
+            }
+
+            img{
+                width: 100%;
+                opacity: 0.2;
+                margin-left: auto;
+            }
+        }
+    }
+}
+
+.images-text{
+    display: flex;
+    .column{
+        width: 50%;
+        padding: 80px;
+
+        &.img-left{
+            padding: 80px 0 0 0;
+            display: flex;
+            align-items: end;
+            justify-content: end;
+            .img{
+                width: 70%;
+                position: relative;
+                &::before{
+                    content: '';
+                    width: 100%;
+                    height: 100%;
+                    top: -40px;
+                    left: -40px;
+                    background-color: $verde;
+                    position: absolute;
+                    z-index: -1;
+                }
+                img{
+                    width: 100%;
+                }
+            }
+        }
+
+        &.text-left, &.text-right{
+            .title{
+                font-weight: bold;
+                font-size: $title;
+                margin: 10px 0;
+                color: $verde;
+            }
+
+            .text{
+                color: $azul;
+            }
+        }
+
+        &.text-right{
+            text-align: right;
+        }
+
+        &.img-right{
+            padding: 0 0 80px 0;
+            display: flex;
+            align-items: start;
+            justify-content: start;
+            .img{
+                width: 70%;
+                position: relative;
+                &::before{
+                    content: '';
+                    width: 100%;
+                    height: 100%;
+                    bottom: -40px;
+                    right: -40px;
+                    background-color: $verde;
+                    position: absolute;
+                    z-index: -1;
+                }
+                img{
+                    width: 100%;
+                }
+            }
+        }
+    }
+}

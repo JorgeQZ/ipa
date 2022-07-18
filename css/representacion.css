@@ -14,7 +14,6 @@
   margin-top: 90px;
   margin-bottom: 90px;
 }
-
 .cont-text-img .cont-text {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -31,28 +30,31 @@
   min-width: 300px;
   margin: 0 auto;
 }
-
 .cont-text-img .cont-text .title {
-  font-size: 28px;
+  font-size: 30px;
   color: #8cc540;
   font-weight: bold;
 }
-
 .cont-text-img .cont-text .desc {
   padding: 10px 0;
   color: #0e526c;
 }
-
 .cont-text-img .cont-img {
   width: 50%;
   min-width: 300px;
   margin: 0 auto;
 }
-
 .cont-text-img .cont-img img {
   width: 100%;
   max-width: 600px;
   height: auto;
+}
+
+.grid-title {
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+  color: #0e526c;
 }
 
 .grid-cont {
@@ -72,7 +74,6 @@
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
 }
-
 .grid-cont .grid-item {
   min-width: 100px;
   width: 20%;
@@ -87,7 +88,6 @@
       -ms-flex-pack: center;
           justify-content: center;
 }
-
 .grid-cont .grid-item img {
   width: auto;
   height: auto;
@@ -113,7 +113,6 @@
       flex-wrap: wrap;
   margin: 90px 0;
 }
-
 .three-columns .item {
   width: 100%;
   max-width: 280px;
@@ -123,7 +122,6 @@
   min-height: 350px;
   margin: 20px auto;
 }
-
 .three-columns .item .icon-img {
   margin: 0 auto;
   display: -webkit-box;
@@ -138,19 +136,16 @@
   width: 130px;
   height: 100px;
 }
-
 .three-columns .item .icon-img img {
   max-height: 50px;
   max-width: 120px;
 }
-
 .three-columns .item .head-text {
   text-align: center;
   font-size: 18px;
   font-weight: bold;
   margin: 10px 0;
 }
-
 .three-columns .item .desc {
   margin: 0 auto;
   width: 80%;
@@ -170,26 +165,22 @@
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
 }
-
 .text-img.ltr {
   -webkit-box-orient: horizontal;
   -webkit-box-direction: reverse;
       -ms-flex-direction: row-reverse;
           flex-direction: row-reverse;
 }
-
 .text-img .cont-img {
   -webkit-box-flex: 1;
       -ms-flex: 1 0 50%;
           flex: 1 0 50%;
 }
-
 .text-img .cont-img img {
   width: 100%;
   margin: 0;
   margin-bottom: -4px;
 }
-
 .text-img .text {
   -webkit-box-flex: 1;
       -ms-flex: 1 0 50%;
@@ -205,12 +196,10 @@
   padding: 50px;
   color: #8cc540;
 }
-
 .text-img .text.bg-blue {
   background-color: #0e526c;
   color: white;
 }
-
 .text-img .text.bg-green {
   background-color: #8cc540;
   color: white;

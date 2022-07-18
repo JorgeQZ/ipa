@@ -42,11 +42,17 @@ function ipa_scripts() {
         wp_enqueue_style('servicios', get_template_directory_uri().'/css/servicios.css', [], 'all');
     }
 
+
+    if(is_page_template( 'page-nosotros.php' )){
+        wp_enqueue_style('nosotros', get_template_directory_uri().'/css/nosotros.css', [], 'all');
+    }
+
+
     if(is_page_template( 'page-representacion.php' )){
         wp_enqueue_style('representacion', get_template_directory_uri().'/css/representacion.css', [], 'all');
     }
 
-    if(is_page_template( 'page-gaceta.php' )){
+    if(is_post_type_archive( 'gaceta' )){
         wp_enqueue_style('gaceta', get_template_directory_uri().'/css/gaceta.css', [], 'all');
     }
 

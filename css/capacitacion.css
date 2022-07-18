@@ -3,7 +3,6 @@
   background-color: #8cc540;
   min-height: 400px;
 }
-
 .form-container .head-form {
   color: white;
   font-size: 30px;
@@ -11,12 +10,10 @@
   text-align: center;
   margin-bottom: 30px;
 }
-
 .form-container .wpcf7 {
   max-width: 600px;
   margin: 0 auto;
 }
-
 .form-container .wpcf7 .row {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -28,12 +25,10 @@
       -ms-flex-pack: justify;
           justify-content: space-between;
 }
-
 .form-container .wpcf7 .row .wpcf7-form-control-wrap {
   width: 45%;
   margin-bottom: 10px;
 }
-
 .form-container .wpcf7 .row .wpcf7-form-control-wrap input {
   -webkit-appearance: none;
      -moz-appearance: none;
@@ -47,28 +42,26 @@
   border-bottom: 1px solid #559353;
   color: white;
 }
-
 .form-container .wpcf7 .row .wpcf7-form-control-wrap input::-webkit-input-placeholder {
   color: rgba(255, 255, 255, 0.5);
 }
-
+.form-container .wpcf7 .row .wpcf7-form-control-wrap input::-moz-placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
 .form-container .wpcf7 .row .wpcf7-form-control-wrap input:-ms-input-placeholder {
   color: rgba(255, 255, 255, 0.5);
 }
-
 .form-container .wpcf7 .row .wpcf7-form-control-wrap input::-ms-input-placeholder {
   color: rgba(255, 255, 255, 0.5);
 }
-
 .form-container .wpcf7 .row .wpcf7-form-control-wrap input::placeholder {
   color: rgba(255, 255, 255, 0.5);
 }
-
 .form-container .wpcf7 .row .wpcf7-form-control-wrap select {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
-  background: #0000;
+  background: rgba(0, 0, 0, 0);
   width: 100%;
   height: 60px;
   padding: 10px 0;
@@ -78,16 +71,13 @@
   border-bottom: 1px solid #559353;
   color: rgba(255, 255, 255, 0.5);
 }
-
 .form-container .wpcf7 .groups {
   padding: 20px 0;
 }
-
 .form-container .wpcf7 .groups .wpcf7-list-item {
   margin: 0;
   margin-right: 20px;
 }
-
 .form-container .wpcf7 .groups .wpcf7-list-item label {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -97,8 +87,7 @@
           align-items: center;
   justify-self: start;
 }
-
-.form-container .wpcf7 .groups .wpcf7-list-item label input[type="checkbox"] {
+.form-container .wpcf7 .groups .wpcf7-list-item label input[type=checkbox] {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
@@ -114,18 +103,15 @@
   -webkit-box-shadow: inset 0px 0px 0px 3px #8cc540;
           box-shadow: inset 0px 0px 0px 3px #8cc540;
 }
-
-.form-container .wpcf7 .groups .wpcf7-list-item label input[type="checkbox"]:checked {
+.form-container .wpcf7 .groups .wpcf7-list-item label input[type=checkbox]:checked {
   background-color: white;
   border: 1px solid white;
 }
-
 .form-container .wpcf7 .groups .wpcf7-list-item label .wpcf7-list-item-label {
   color: white;
   font-size: 20px;
 }
-
-.form-container .wpcf7 input[type="submit"] {
+.form-container .wpcf7 input[type=submit] {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
