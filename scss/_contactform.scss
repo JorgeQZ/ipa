@@ -44,3 +44,30 @@
 
     }
 }
+
+@media screen and (max-width: 1023px) {
+    .wpcf7{
+
+        .contact_row{
+            flex-direction: column;
+            .wpcf7-form-control-wrap{
+                width: 100%;
+                textarea, input{
+                    padding: 5px;
+                    width: 100%;
+                }
+
+            }
+
+            input[type="submit"]{
+                appearance: none;
+                border: none;
+                background-color: $azul;
+                color: white;
+                padding: 8px 12px;
+                text-transform: uppercase;
+            }
+
+        }
+    }
+}

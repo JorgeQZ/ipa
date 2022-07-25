@@ -142,3 +142,31 @@
 .images-text .column.img-right .img img {
   width: 100%;
 }
+
+@media screen and (max-width: 767px) {
+  .text-cont .container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .text-cont .container .column {
+    width: 100%;
+  }
+  .text-cont .container .column:nth-child(1) {
+    padding: 20px;
+  }
+  .images-text {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .images-text .column {
+    width: 100%;
+    padding: 20px;
+  }
+}

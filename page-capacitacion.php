@@ -24,6 +24,14 @@ get_header();
         <br>
 
         <div class="tabs-container">
+            <div class="tabs-mobile">
+                <div class="active-tab">text</div>
+                <div class="burguer-tabs">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
             <div class="tabs">
                 <div class="tab-item">lorem</div>
                 <div class="tab-item">lorem</div>

@@ -33,7 +33,6 @@ header {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  padding: 0px 90px;
   height: 90px;
   position: absolute;
   width: 100%;
@@ -47,7 +46,17 @@ header .logo-img img {
   width: 150px;
   height: auto;
 }
-header .cont_menu {
+header .cont-menu-right {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  position: relative;
+  padding: 0;
+}
+header .cont-menu-right .cont_menu {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -57,11 +66,13 @@ header .cont_menu {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  background-color: white;
+  background-color: #fff;
   height: 90px;
-  width: 50%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
 }
-header .cont_menu .menu-menu-principal-container ul {
+header .cont-menu-right .cont_menu .menu-menu-principal-container ul {
   padding: 0;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -73,7 +84,7 @@ header .cont_menu .menu-menu-principal-container ul {
       -ms-flex-pack: justify;
           justify-content: space-between;
 }
-header .cont_menu .menu-menu-principal-container ul li {
+header .cont-menu-right .cont_menu .menu-menu-principal-container ul li {
   list-style: none;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -86,17 +97,37 @@ header .cont_menu .menu-menu-principal-container ul li {
           justify-content: center;
   padding: 5px;
   margin: 5px;
-  font-size: 12px;
+  font-size: 14px;
 }
-header .cont_menu .menu-menu-principal-container ul li a {
+header .cont-menu-right .cont_menu .menu-menu-principal-container ul li a {
   text-decoration: none;
   color: #8cc540;
   cursor: pointer;
 }
-header .cont_search {
+header .cont-menu-right .search-bar {
+  display: none;
+  position: absolute;
+  background-color: red;
+  width: calc(100% - 180px);
+  width: 0;
+  height: 0;
+  top: 0px;
+  right: 0;
+  z-index: 10;
+}
+header .cont-menu-right .search-bar input[type=search] {
+  width: 100%;
+  font-size: 30px;
+  color: #0e526c;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border: none;
+}
+header .cont-menu-right .cont_search {
   position: absolute;
   top: 0;
-  right: 0;
+  right: -90px;
   width: 90px;
   height: 90px;
   background-color: #2e7b98;
@@ -109,19 +140,150 @@ header .cont_search {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  cursor: pointer;
+  display: none;
 }
-header .cont_search svg {
+header .cont-menu-right .cont_search svg {
   width: 20px;
   height: 20px;
 }
-header .cont_search svg path {
+header .cont-menu-right .cont_search svg path {
   fill: #8cc540;
 }
 
+@media screen and (max-width: 1023px) {
+  header {
+    padding: 0 10px;
+    height: 70px;
+  }
+  header .logo-img img {
+    width: 120px;
+  }
+  header .cont-menu-right {
+    width: 100%;
+    background-color: #fff;
+    left: 0;
+    position: absolute;
+    top: 100%;
+    display: none;
+  }
+  header .cont-menu-right.active {
+    display: block;
+  }
+  header .cont-menu-right .search-bar {
+    background-color: red;
+    width: calc(100% - 70px);
+    height: 70px;
+    display: block;
+    background-color: blue;
+  }
+  header .cont-menu-right .search-bar input[type=search] {
+    width: 100%;
+    height: 70px;
+    font-size: 30px;
+    padding: 10px 20px;
+    color: #0e526c;
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
+    border: none;
+    border-top: 1px solid #2e7b98;
+    border-bottom: 1px solid #2e7b98;
+  }
+  header .cont-menu-right .cont_search {
+    height: 70px;
+    width: 70px;
+    margin-right: 0;
+    background-color: #2e7b98;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    cursor: pointer;
+  }
+  header .cont-menu-right .cont_search svg {
+    width: 20px;
+    height: 20px;
+  }
+  header .cont-menu-right .cont_search svg path {
+    fill: #8cc540;
+  }
+  header .cont-menu-right .cont_menu {
+    display: block;
+    background-color: white;
+    height: auto;
+    width: 100%;
+  }
+  header .cont-menu-right .cont_menu .menu-menu-principal-container ul {
+    padding: 0;
+    margin: 0;
+    display: block;
+  }
+  header .cont-menu-right .cont_menu .menu-menu-principal-container ul li {
+    position: relative;
+    height: 55px;
+    font-size: 22px;
+  }
+  header .cont-menu-right .cont_menu .menu-menu-principal-container ul li:not(:last-child)::before {
+    content: "";
+    width: 70%;
+    height: 1px;
+    position: absolute;
+    background-color: #8cc540;
+    bottom: 0;
+  }
+  header .burguer-cont {
+    width: 30px;
+    height: 25px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: end;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-transition: all 300ms;
+    transition: all 300ms;
+  }
+  header .burguer-cont span {
+    -webkit-transition: all 300ms;
+    transition: all 300ms;
+    background-color: #8cc540;
+    height: 4px;
+  }
+  header .burguer-cont span:first-child {
+    width: 100%;
+  }
+  header .burguer-cont span:nth-child(2) {
+    width: 60%;
+  }
+  header .burguer-cont span:last-child {
+    width: 35%;
+  }
+  header .burguer-cont.active {
+    -webkit-transform: rotate(90deg);
+            transform: rotate(90deg);
+  }
+  header .burguer-cont.active span {
+    width: 100%;
+  }
+}
 .banner-cont {
   width: 100%;
   height: 475px;
   background-size: cover;
+  background-position: center;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -133,7 +295,7 @@ header .cont_search svg path {
           justify-content: center;
 }
 .banner-cont .title-banner {
-  font-size: 4rem;
+  font-size: 3rem;
   font-weight: bolder;
   color: white;
 }
@@ -168,6 +330,7 @@ footer {
           flex-direction: row;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  font-size: 14px;
 }
 footer .column {
   display: -webkit-box;
@@ -271,6 +434,7 @@ footer .column .menu li {
   }
   footer .column {
     min-width: 300px;
+    width: 100%;
   }
   footer .column p {
     padding-left: 40px;
@@ -332,6 +496,31 @@ footer .column .menu li {
   text-transform: uppercase;
 }
 
+@media screen and (max-width: 1023px) {
+  .wpcf7 .contact_row {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .wpcf7 .contact_row .wpcf7-form-control-wrap {
+    width: 100%;
+  }
+  .wpcf7 .contact_row .wpcf7-form-control-wrap textarea, .wpcf7 .contact_row .wpcf7-form-control-wrap input {
+    padding: 5px;
+    width: 100%;
+  }
+  .wpcf7 .contact_row input[type=submit] {
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
+    border: none;
+    background-color: #0e526c;
+    color: white;
+    padding: 8px 12px;
+    text-transform: uppercase;
+  }
+}
 .tabs-container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -424,9 +613,13 @@ footer .column .menu li {
   height: 50px;
   cursor: pointer;
 }
+.tab-calendar-container .tab-calendar {
+  overflow-x: auto;
+}
 .tab-calendar-container .tab-calendar .calendar {
   width: 100%;
   border: none;
+  border-collapse: collapse;
 }
 .tab-calendar-container .tab-calendar .calendar thead {
   height: 80px;
@@ -436,6 +629,7 @@ footer .column .menu li {
   text-transform: uppercase;
   border-top: 1px solid #9ec44e;
   color: #31536b;
+  padding: 5px 10px;
 }
 .tab-calendar-container .tab-calendar .calendar tbody tr td {
   font-size: 16px;
@@ -447,4 +641,101 @@ footer .column .menu li {
 }
 .tab-calendar-container .tab-calendar .calendar tbody tr:last-child td {
   border-bottom: 1px solid #9ec44e;
+}
+
+@media screen and (max-width: 1023px) {
+  .tabs-container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    position: relative;
+    width: 100%;
+  }
+  .tabs-container .tabs-mobile {
+    color: #0e526c;
+    font-weight: bold;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+    height: 50px;
+  }
+  .tabs-container .tabs-mobile .active-tab {
+    min-width: 30%;
+    font-size: 20px;
+  }
+  .tabs-container .tabs-mobile .burguer-tabs {
+    float: left;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: end;
+    width: 30px;
+    height: 20px;
+    -webkit-transition: all 300ms;
+    transition: all 300ms;
+  }
+  .tabs-container .tabs-mobile .burguer-tabs span {
+    -webkit-transition: all 300ms;
+    transition: all 300ms;
+    width: 100%;
+    background-color: #0e526c;
+    height: 3px;
+  }
+  .tabs-container .tabs-mobile .burguer-tabs span:nth-child(2) {
+    width: 60%;
+  }
+  .tabs-container .tabs-mobile .burguer-tabs span:last-child {
+    width: 30%;
+  }
+  .tabs-container .tabs-mobile .burguer-tabs.active {
+    width: 20px;
+    -webkit-transform: rotateZ(90deg);
+            transform: rotateZ(90deg);
+  }
+  .tabs-container .tabs-mobile .burguer-tabs.active span {
+    width: 100%;
+  }
+  .tabs-container .tabs {
+    width: 100%;
+    max-width: unset;
+    z-index: 10;
+    display: none;
+    position: absolute;
+    background: #fff;
+    top: 35px;
+    left: 0;
+    border-top: 1px solid #0e526c;
+  }
+  .tabs-container .tabs .tab-item {
+    min-height: 50px;
+    height: auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    border-bottom: 1px solid green;
+    padding: 10px 0;
+    color: #31536b;
+    cursor: pointer;
+  }
+  .tabs-container .tabs-content {
+    color: #31536b;
+    padding: 10px 0;
+  }
 }

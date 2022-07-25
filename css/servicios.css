@@ -96,3 +96,13 @@
 .category-list .grid .item:hover .desc {
   color: #8cc540;
 }
+
+@media screen and (max-width: 767px) {
+  .category-list .grid {
+    margin: 90px 0;
+  }
+  .category-list .grid .item {
+    width: 100%;
+    margin: 5% auto;
+  }
+}

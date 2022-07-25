@@ -98,3 +98,29 @@
         }
     }
 }
+
+@media screen and (max-width: 1023px) {
+    .form-container{
+        padding: 20px;
+        .head-form{
+            color: white;
+            font-size: $title;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .wpcf7{
+            .row{
+                flex-direction: column;
+                .wpcf7-form-control-wrap{
+                    width: 100%;
+
+                }
+            }
+
+            input[type="submit"]{
+               width: 100%;
+            }
+        }
+    }
+}

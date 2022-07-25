@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?php the_title(); ?></title>
+    <title><?php bloginfo(); echo ' - '; the_title(); ?></title>
     <?php wp_head();?>
 </head>
 
@@ -15,10 +15,21 @@
         </div>
 
 
-        <div class="cont_menu">
-            <?php wp_nav_menu( array( 'theme_location' => 'primary_menu' ) ); ?>
+        <div class="cont-menu-right">
+            <div class="search-bar">
+                <input type="search" placeholder="Buscar...">
+            </div>
+            <div class="cont_search">
+                <?php echo file_get_contents(get_template_directory_uri(  ).'/img/search-icon.svg'); ?>
+            </div>
+            <div class="cont_menu">
+                <?php wp_nav_menu( array( 'theme_location' => 'primary_menu' ) ); ?>
+            </div>
         </div>
-        <div class="cont_search">
-            <?php echo file_get_contents(get_template_directory_uri(  ).'/img/search-icon.svg'); ?>
+
+        <div class="burguer-cont">
+            <span></span>
+            <span></span>
+            <span></span>
         </div>
     </header>

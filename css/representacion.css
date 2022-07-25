@@ -204,3 +204,72 @@
   background-color: #8cc540;
   color: white;
 }
+
+@media screen and (max-width: 767px) {
+  .cont-text-img .cont-text {
+    padding: 0px;
+    width: 100%;
+    margin: 0 auto;
+  }
+  .cont-text-img .cont-img {
+    width: 100%;
+  }
+  .grid-cont .grid-item {
+    min-width: 100px;
+    width: 40%;
+    margin: 10px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .grid-cont .grid-item img {
+    width: auto;
+    height: auto;
+    max-height: 80px;
+    max-width: 120px;
+  }
+  .three-columns .item {
+    width: 100%;
+    max-width: 100%;
+    background-color: #8cc540;
+    padding: 20px;
+    color: white;
+    min-height: 350px;
+    margin: 20px auto;
+  }
+  .three-columns .item .icon-img {
+    margin: 0 auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    width: 150px;
+    height: 150px;
+  }
+  .three-columns .item .icon-img img {
+    max-height: 90px;
+    max-width: 150px;
+  }
+  .three-columns .item .head-text {
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    margin: 10px 0;
+  }
+  .three-columns .item .desc {
+    margin: 0 auto;
+    width: 80%;
+    text-align: center;
+  }
+}

@@ -69,9 +69,11 @@
         }
     }
     .tab-calendar{
+        overflow-x: auto;
         .calendar{
             width: 100%;
             border: none;
+            border-collapse: collapse;
             thead{
                 height: 80px;
                 th{
@@ -79,6 +81,7 @@
                     text-transform: uppercase;
                     border-top: 1px solid #9ec44e;
                     color: #31536b;
+                    padding: 5px 10px;
                 }
             }
             tbody{
@@ -99,5 +102,84 @@
                 }
             }
         }
+    }
+}
+
+@media screen and (max-width: 1023px){
+    .tabs-container{
+        flex-direction: column;
+        position: relative;
+        width: 100%;
+        .tabs-mobile{
+            color: $azul;
+            font-weight: bold;
+            display: flex;
+            width: 100%;
+            height: 50px;
+            .active-tab{
+                min-width: 30%;
+                font-size: 20px;
+            }
+            .burguer-tabs{
+                float: left;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                align-items: end;
+                width: 30px;
+                height: 20px;
+                transition: all 300ms;
+                span{
+                transition: all 300ms;
+
+                    width: 100%;
+                    background-color: $azul;
+                    height: 3px;
+                    &:nth-child(2){
+                        width: 60%;
+                    }
+                    &:last-child{
+                        width: 30%;
+                    }
+                }
+
+                &.active{
+                    width: 20px;
+                    transform: rotateZ(90deg);
+                    span{
+                        width: 100%;
+                    }
+                }
+            }
+        }
+
+        .tabs{
+            width:100%;
+            max-width: unset;
+            z-index: 10;
+            display: none;
+            position: absolute;
+            background: #fff;
+            top: 35px;
+            left: 0;
+            border-top: 1px solid $azul;
+            .tab-item{
+                min-height: 50px;
+                height: auto;
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                border-bottom: 1px solid green;
+                padding: 10px 0;
+                color: #31536b;
+                cursor: pointer;
+            }
+        }
+
+        .tabs-content{
+            color: #31536b;
+            padding: 10px 0;
+        }
+
     }
 }

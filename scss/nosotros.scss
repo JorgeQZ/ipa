@@ -128,3 +128,26 @@
         }
     }
 }
+
+@media screen and (max-width: 767px) {
+    .text-cont{
+        .container{
+            flex-direction: column;
+            .column{
+                width: 100%;
+                &:nth-child(1){
+                    padding: 20px;
+                }
+            }
+        }
+    }
+
+    .images-text{
+        display: flex;
+        flex-direction: column;
+        .column{
+            width: 100%;
+            padding: 20px;
+        }
+    }
+}

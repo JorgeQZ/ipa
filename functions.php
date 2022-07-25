@@ -31,6 +31,7 @@
 
 
 function ipa_scripts() {
+    wp_enqueue_script( 'custom',get_template_directory_uri(  ).'/js/custom.js', 'jquery');
     wp_enqueue_style('generals', get_template_directory_uri().'/css/generals.css', [], 'all');
 
     if(is_page_template( 'page-capacitacion.php' )){
