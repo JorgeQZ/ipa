@@ -225,3 +225,131 @@
         }
     }
 }
+
+@media screen and (max-width: 1023px){
+    .banner{
+        display: block;
+        max-height: 2000px;
+        .column{
+            width: 100%;
+            font-size: 2rem;
+            padding: 20px;
+            &:last-child{
+                padding: 20px;
+            }
+        }
+    }
+
+    .img-text{
+       display: block;
+       .column, .column:first-child{
+        overflow: visible;
+        width: 100%;
+        padding: 20px;
+        img{
+            height: auto;
+            width: 100%;
+        }
+       }
+    }
+
+    .grid-services{
+        .item{
+            margin: 10px;
+            width: 100%;
+            min-width: 300px;
+        }
+    }
+
+    .services-button-cont{
+        flex-direction: row;
+        flex-wrap: wrap;
+        .item{
+            min-width: 300px;
+        }
+        .button{
+            background-color: $verde;
+            padding: 10px 30px;
+            width: fit-content;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+            transition: all 300ms;
+            img{
+                width: 20px;
+            }
+
+            &:hover{
+                background-color: $azul;
+            }
+        }
+    }
+
+    .img-text-reverse{
+        display: block;
+        .column{
+            width: 100%;
+            &:last-child{
+                padding: 20px;
+            }
+        }
+    }
+
+    .grid-img-text{
+        display: block;
+        padding: 20px ;
+        .item{
+            width: 100%;
+            display: block;
+            align-items: center;
+            .column{
+                padding: 10px;
+            }
+        }
+    }
+
+.grid-columns{
+    display: block;
+    padding: 20px ;
+    .item{
+        width: 90%;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        margin: 10px;
+        .column{
+            width: 100%;
+            img{
+                width: 100%;
+            }
+            .title{
+                color: $verde;
+                font-weight: bold;
+                margin: 10px 0;
+            }
+            .desc{
+                color: $azul;
+            }
+            .button{
+                background-color: $verde;
+                width: fit-content;
+                padding: 10px 30px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-top: 20px;
+                transition: all 300ms;
+                img{
+                    width: 20px
+                }
+
+                &:hover{
+                    background-color: $azul;
+                }
+            }
+        }
+    }
+}
+
+}
