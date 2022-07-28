@@ -3,6 +3,9 @@
     align-items: flex-start;
     justify-content: start;
     margin-bottom: 80px;
+    .tabs-mobile{
+        display: none;
+    }
     .tabs{
         width: 25%;
         max-width: 200px;
@@ -15,6 +18,12 @@
             padding: 10px 0;
             color: #31536b;
             cursor: pointer;
+            transition: all 300ms;
+            &:hover{
+                background-color: $verde;
+                color: white;
+                padding-left: 10px;
+            }
         }
     }
 

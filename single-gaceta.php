@@ -61,7 +61,9 @@
             </div>
         </div>
         <div class="column post-item">
-            <div class="featured-img"></div>
+            <div class="featured-img">
+                <img src="<?php echo get_template_directory_uri(  ).'/img/stock-photo-smile-technician-engineer-women-in-factory-1708952236.png' ?>" alt="">
+            </div>
             <div class="text">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto nulla totam eius ducimus eaque non enim quos molestiae. Repellat dolor laborum reiciendis nisi nesciunt soluta tempora vel provident recusandae deleniti.
             </div>

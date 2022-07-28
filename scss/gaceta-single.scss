@@ -75,6 +75,7 @@
             justify-content: end;
             padding: 20px 30px;
             font-weight: bold;
+            transition: all 300ms;
             &:nth-child(3n){
                 margin-right: 0;
             }
@@ -86,7 +87,7 @@
                 width: 100%;
                 height: 100%;
                 // background-color: $verde;
-                opacity: 0.9;
+                opacity: 0.6;
                 transition: all 300ms;
             }
             .title, .desc{
@@ -95,6 +96,8 @@
             }
 
             &:hover{
+                transform: scale(1.1);
+                z-index: 10;
                 .overlay{
                     background-color: $verde;
                 }
@@ -111,7 +114,6 @@
         .featured-img{
             width: 100%;
             height: 300px;
-            background-color: green;
         }
         .text{
             margin: 20px 0;

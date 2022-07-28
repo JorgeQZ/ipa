@@ -16,14 +16,16 @@
 
 
         <div class="cont-menu-right">
+
+            <div class="cont_menu">
+                <?php wp_nav_menu( array( 'theme_location' => 'primary_menu' ) ); ?>
+            </div>
+
             <div class="search-bar">
                 <input type="search" placeholder="Buscar...">
             </div>
             <div class="cont_search">
                 <?php echo file_get_contents(get_template_directory_uri(  ).'/img/search-icon.svg'); ?>
-            </div>
-            <div class="cont_menu">
-                <?php wp_nav_menu( array( 'theme_location' => 'primary_menu' ) ); ?>
             </div>
         </div>
 

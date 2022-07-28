@@ -1,0 +1,70 @@
+@import "variables";
+.members-container{
+    padding-top: 50px;
+    padding-bottom: 50px;
+    .title{
+        text-align: center;
+        font-size: $title;
+        font-weight: bold;
+        color: $azul;
+        padding: 30px;
+    }
+    .grid-members{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        flex-direction: row;
+        .item{
+            width: 33%;
+            min-width:230px;
+            margin: 30px auto;
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            flex-direction: column;
+            img{
+                max-width: 200px;
+                margin: 10px auto;
+            }
+            .desc{
+                color: $azul;
+                text-align: center;
+            }
+
+            .social-cont{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin: 5px;
+                .link{
+                    margin: 0 5px;
+                    padding: 0;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 30px;
+                    height: 30px;
+                    border-radius: 50%;
+                    transition: all 300ms;
+                    overflow: hidden;
+                    img{
+                        width: 30px;
+                        height: 30px;
+                        position: relative;
+                    }
+                    &:hover{
+                        background-color: $azul;
+                        transform: scale(1.2);
+                    }
+
+                }
+            }
+        }
+    }
+}
+
+.form-container{
+    background-color: $verde;
+    padding: 90px ;
+}

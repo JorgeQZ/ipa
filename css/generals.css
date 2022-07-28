@@ -42,11 +42,15 @@ header.not_sticked {
   position: relative;
   border-bottom: 1px solid #9fafba;
 }
+header .logo-img {
+  margin-left: 90px;
+}
 header .logo-img img {
   width: 150px;
   height: auto;
 }
 header .cont-menu-right {
+  width: 50%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -105,30 +109,46 @@ header .cont-menu-right .cont_menu .menu-menu-principal-container ul li a {
   cursor: pointer;
 }
 header .cont-menu-right .search-bar {
-  display: none;
   position: absolute;
-  background-color: red;
-  width: calc(100% - 180px);
-  width: 0;
-  height: 0;
+  background-color: white;
+  height: 90px;
   top: 0px;
-  right: 0;
+  right: 90px;
   z-index: 10;
+  width: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-transition: all 300ms;
+  transition: all 300ms;
+  border: 0px solid #8cc540;
 }
 header .cont-menu-right .search-bar input[type=search] {
-  width: 100%;
+  width: 90%;
+  height: 100%;
   font-size: 30px;
+  padding: 0px;
   color: #0e526c;
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
   border: none;
 }
+header .cont-menu-right .search-bar input[type=search]:focus {
+  outline: none;
+}
+header .cont-menu-right .search-bar.active {
+  width: calc(100% - 90px);
+  border: 1px solid #8cc540;
+}
 header .cont-menu-right .cont_search {
-  position: absolute;
-  top: 0;
-  right: -90px;
-  width: 90px;
+  min-width: 90px;
   height: 90px;
   background-color: #2e7b98;
   display: -webkit-box;
@@ -141,7 +161,6 @@ header .cont-menu-right .cont_search {
       -ms-flex-pack: center;
           justify-content: center;
   cursor: pointer;
-  display: none;
 }
 header .cont-menu-right .cont_search svg {
   width: 20px;
@@ -150,11 +169,17 @@ header .cont-menu-right .cont_search svg {
 header .cont-menu-right .cont_search svg path {
   fill: #8cc540;
 }
+header .burguer-cont {
+  display: none;
+}
 
-@media screen and (max-width: 1023px) {
+@media screen and (max-width: 1279px) {
   header {
     padding: 0 10px;
     height: 70px;
+  }
+  header .logo-img {
+    margin-left: 10px;
   }
   header .logo-img img {
     width: 120px;
@@ -171,53 +196,27 @@ header .cont-menu-right .cont_search svg path {
     display: block;
   }
   header .cont-menu-right .search-bar {
-    background-color: red;
-    width: calc(100% - 70px);
     height: 70px;
-    display: block;
-    background-color: blue;
-  }
-  header .cont-menu-right .search-bar input[type=search] {
-    width: 100%;
-    height: 70px;
-    font-size: 30px;
-    padding: 10px 20px;
-    color: #0e526c;
-    -webkit-appearance: none;
-       -moz-appearance: none;
-            appearance: none;
-    border: none;
-    border-top: 1px solid #2e7b98;
-    border-bottom: 1px solid #2e7b98;
+    width: calc(100% - 80px);
+    position: absolute;
+    top: 0;
+    left: 0;
   }
   header .cont-menu-right .cont_search {
+    top: 0;
+    right: 0;
+    position: absolute;
     height: 70px;
-    width: 70px;
-    margin-right: 0;
-    background-color: #2e7b98;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    cursor: pointer;
-  }
-  header .cont-menu-right .cont_search svg {
-    width: 20px;
-    height: 20px;
-  }
-  header .cont-menu-right .cont_search svg path {
-    fill: #8cc540;
+    min-width: 70px;
   }
   header .cont-menu-right .cont_menu {
     display: block;
     background-color: white;
     height: auto;
     width: 100%;
+    margin-top: 70px;
+    border-top: 1px solid #0e526c;
+    z-index: 11;
   }
   header .cont-menu-right .cont_menu .menu-menu-principal-container ul {
     padding: 0;
@@ -448,7 +447,6 @@ footer .column .menu li {
       -ms-flex-pack: justify;
           justify-content: space-between;
   margin: 0 auto;
-  max-width: 800px;
 }
 .wpcf7 .contact_row .wpcf7-form-control-wrap {
   width: 45%;
@@ -494,6 +492,7 @@ footer .column .menu li {
   color: white;
   padding: 8px 12px;
   text-transform: uppercase;
+  margin-top: 50px;
 }
 
 @media screen and (max-width: 1023px) {
@@ -533,6 +532,9 @@ footer .column .menu li {
           justify-content: start;
   margin-bottom: 80px;
 }
+.tabs-container .tabs-mobile {
+  display: none;
+}
 .tabs-container .tabs {
   width: 25%;
   max-width: 200px;
@@ -552,6 +554,13 @@ footer .column .menu li {
   padding: 10px 0;
   color: #31536b;
   cursor: pointer;
+  -webkit-transition: all 300ms;
+  transition: all 300ms;
+}
+.tabs-container .tabs .tab-item:hover {
+  background-color: #8cc540;
+  color: white;
+  padding-left: 10px;
 }
 .tabs-container .tabs-content {
   color: #31536b;

@@ -25,7 +25,7 @@ get_header();
 
         <div class="tabs-container">
             <div class="tabs-mobile">
-                <div class="active-tab">text</div>
+                <div class="active-tab">Categoría activa</div>
                 <div class="burguer-tabs">
                     <span></span>
                     <span></span>

@@ -1,0 +1,99 @@
+.members-container {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+.members-container .title {
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+  color: #0e526c;
+  padding: 30px;
+}
+.members-container .grid-members {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+.members-container .grid-members .item {
+  width: 33%;
+  min-width: 230px;
+  margin: 30px auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.members-container .grid-members .item img {
+  max-width: 200px;
+  margin: 10px auto;
+}
+.members-container .grid-members .item .desc {
+  color: #0e526c;
+  text-align: center;
+}
+.members-container .grid-members .item .social-cont {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 5px;
+}
+.members-container .grid-members .item .social-cont .link {
+  margin: 0 5px;
+  padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  -webkit-transition: all 300ms;
+  transition: all 300ms;
+  overflow: hidden;
+}
+.members-container .grid-members .item .social-cont .link img {
+  width: 30px;
+  height: 30px;
+  position: relative;
+}
+.members-container .grid-members .item .social-cont .link:hover {
+  background-color: #0e526c;
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+
+.form-container {
+  background-color: #8cc540;
+  padding: 90px;
+}

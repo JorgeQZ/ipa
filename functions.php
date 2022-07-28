@@ -3,6 +3,11 @@
  * IPA functions
  */
 
+@ini_set( 'upload_max_size' , '256M' );
+@ini_set( 'post_max_size', '256M');
+@ini_set( 'max_execution_time', '300' );
+
+
  function ipa_support(){
      add_theme_support('wp-block-styles');
      add_editor_style('style.css');
@@ -34,6 +39,11 @@ function ipa_scripts() {
     wp_enqueue_script( 'custom',get_template_directory_uri(  ).'/js/custom.js', 'jquery');
     wp_enqueue_style('generals', get_template_directory_uri().'/css/generals.css', [], 'all');
 
+    if(is_page_template( 'frontpage.php' )){
+        wp_enqueue_style('frontpage', get_template_directory_uri().'/css/frontpage.css', [], 'all');
+    }
+
+
     if(is_page_template( 'page-capacitacion.php' )){
         wp_enqueue_style('capacitacion', get_template_directory_uri().'/css/capacitacion.css', [], 'all');
     }
@@ -53,6 +63,11 @@ function ipa_scripts() {
         wp_enqueue_style('representacion', get_template_directory_uri().'/css/representacion.css', [], 'all');
     }
 
+
+    if(is_page_template( 'page-contacto.php' )){
+        wp_enqueue_style('contacto', get_template_directory_uri().'/css/contacto.css', [], 'all');
+    }
+
     if(is_post_type_archive( 'gaceta' )){
         wp_enqueue_style('gaceta', get_template_directory_uri().'/css/gaceta.css', [], 'all');
     }
@@ -60,6 +75,7 @@ function ipa_scripts() {
     if(is_singular( 'gaceta' )){
         wp_enqueue_style('gaceta-single', get_template_directory_uri().'/css/gaceta-single.css', [], 'all');
     }
+
 }
 add_action('wp_enqueue_scripts', 'ipa_scripts');
 
@@ -155,4 +171,40 @@ function ipa_posttype_gaceta(){
 
       register_post_type( 'gaceta', $args);
 }
+
+//
+// Miembros de IPA
+
+// add_action( 'init', 'ipa_members_gaceta' );
+
+// function ipa_members_gaceta(){
+//     $labels = array(
+//         'name'                => __('Miembro'),
+//         'singular_name'       => __('Miembro'),
+//         'add_new'             => __('Agregar nuevo post'),
+//         'add_new_item'        => __('Agregar nuevo post'),
+//         'edit_item'           => __('Editar post'),
+//         'add_new'             => __('Agregar nuevo post'),
+//         'all_items'           => __('Todos los posts'),
+//         'view_item'           => __('Ver posts'),
+//         'search_items'        => __('Buscar posts'),
+//         'not_found'           => __('No se han encontrado posts de miembro.'),
+// 		'not_found_in_trash'  => __('No se han encontrado posts de miembro en la papelera')
+//     );
+
+
+//     $args = array(
+//         'labels'            => $labels,
+//         'description'       => '',
+//         'public'            => true,
+//         'menu_position'     => 5,
+//         'supports'          => array( 'title', 'thumbnail', 'excerpt'),
+//         'has_archive'       => true,
+//         'show_in_admin_bar' => true,
+//         'show_in_nav_menus' => true,
+//         'query_var'         => 'gaceta'
+//       );
+
+//       register_post_type( 'miembro', $args);
+// }
 ?>

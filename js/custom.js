@@ -16,4 +16,9 @@ $(document).ready(function () {
         $('.tabs').slideToggle();
 
     })
+
+    $('.cont_search').on('click', function (e) {
+        e.preventDefault();
+        $('.search-bar').toggleClass('active');
+    });
 });
