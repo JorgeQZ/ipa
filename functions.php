@@ -2,6 +2,7 @@
  /**
  * IPA functions
  */
+include "inc/gaceta_functions.php";
 
 @ini_set( 'upload_max_size' , '256M' );
 @ini_set( 'post_max_size', '256M');
@@ -172,39 +173,60 @@ function ipa_posttype_gaceta(){
       register_post_type( 'gaceta', $args);
 }
 
+
+function taxonomias_gaceta() {
+    register_taxonomy(
+        'gaceta_categorias',  //The name of the taxonomy. Name should be in slug form (must not contain capital letters or spaces).
+        'gaceta',        //post type name
+        array(
+            'hierarchical' => true,
+            'label' => 'Categoría gaceta',  //Display name
+            'query_var' => true,
+            'show_ui' => true,
+            'show_in_menu' => true,
+            'show_admin_column' => true,
+            'rewrite' => array(
+                'slug' => 'slug_gaceta', // This controls the base slug that will display before each term
+                'with_front' => false // Don't display the category base before
+            )
+        )
+    );
+  }
+  add_action( 'init', 'taxonomias_gaceta');
 //
 // Miembros de IPA
 
-// add_action( 'init', 'ipa_members_gaceta' );
+add_action( 'init', 'ipa_members_gaceta' );
 
-// function ipa_members_gaceta(){
-//     $labels = array(
-//         'name'                => __('Miembro'),
-//         'singular_name'       => __('Miembro'),
-//         'add_new'             => __('Agregar nuevo post'),
-//         'add_new_item'        => __('Agregar nuevo post'),
-//         'edit_item'           => __('Editar post'),
-//         'add_new'             => __('Agregar nuevo post'),
-//         'all_items'           => __('Todos los posts'),
-//         'view_item'           => __('Ver posts'),
-//         'search_items'        => __('Buscar posts'),
-//         'not_found'           => __('No se han encontrado posts de miembro.'),
-// 		'not_found_in_trash'  => __('No se han encontrado posts de miembro en la papelera')
-//     );
+function ipa_members_gaceta(){
+    $labels = array(
+        'name'                => __('Miembro'),
+        'singular_name'       => __('Miembro'),
+        'add_new'             => __('Agregar nuevo post'),
+        'add_new_item'        => __('Agregar nuevo post'),
+        'edit_item'           => __('Editar post'),
+        'add_new'             => __('Agregar nuevo post'),
+        'all_items'           => __('Todos los posts'),
+        'view_item'           => __('Ver posts'),
+        'search_items'        => __('Buscar posts'),
+        'not_found'           => __('No se han encontrado posts de miembro.'),
+		'not_found_in_trash'  => __('No se han encontrado posts de miembro en la papelera')
+    );
 
 
-//     $args = array(
-//         'labels'            => $labels,
-//         'description'       => '',
-//         'public'            => true,
-//         'menu_position'     => 5,
-//         'supports'          => array( 'title', 'thumbnail', 'excerpt'),
-//         'has_archive'       => true,
-//         'show_in_admin_bar' => true,
-//         'show_in_nav_menus' => true,
-//         'query_var'         => 'gaceta'
-//       );
+    $args = array(
+        'labels'            => $labels,
+        'description'       => '',
+        'public'            => true,
+        'menu_position'     => 5,
+        'supports'          => array( 'title', 'thumbnail', 'excerpt'),
+        'has_archive'       => true,
+        'show_in_admin_bar' => true,
+        'show_in_nav_menus' => true,
+        'query_var'         => 'miembro'
+      );
 
-//       register_post_type( 'miembro', $args);
-// }
+      register_post_type( 'miembro', $args);
+}
+
 ?>
