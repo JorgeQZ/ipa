@@ -14,64 +14,111 @@ function load_Content_scripts() {
 // Change cat
 add_action( 'wp_ajax_nopriv_change_category', 'change_category');
 add_action( 'wp_ajax_change_category', 'change_category' );
+function change_category() {
+
+	$args = array(
+		'post_type' => 'gaceta',
+		'post_status' => 'publish',
+		'posts_per_page' => -1,
+		'orderby' => 'DATE',
+		'order' => 'DESC',
+		'tax_query'			=> array(
+			array(
+				'taxonomy' => 'gaceta_categorias',
+				'field' => 'slug',
+				'terms' => $_POST['categoria']
+			)
+		)
+	);
 
 
-//Get años
-// add_action( 'wp_ajax_nopriv_Load_Content_Anios', 'Load_Content_Anios');
-// add_action( 'wp_ajax_Load_Content_Anios', 'Load_Content_Anios' );
+	$posts = array();
+	$the_query = new WP_QUERY ( $args );
 
-// function Load_Content_Anios() {
-// 	$categoria = $_REQUEST['categoria'];
-// 		$args = array(
-// 			'post_type' 		=> 'acervo-digital',
-// 			'post_status' 		=> 'publish',
-//             'posts_per_page' => -1,
-//             'orderby' => 'publish_date',
-//             'order' => 'DESC',
-// 			'tax_query'			=> array(
-// 				array(
-// 					'taxonomy' => 'acervo_categorias',
-// 					'field' => 'slug',
-// 					'terms' => $categoria
-// 				)
-// 			)
-// 		);
+	while ( $the_query->have_posts() ) :
+		$the_query->the_post();
+
+		$post_link = get_field('url_de_interes',  $post->ID  );
+		$post_descripcion = get_field('descripcion',  $post->ID  );
+
+		$post_image =  wp_get_attachment_image_src( get_post_thumbnail_id(  $post->ID ), 'single-post-thumbnail' );
+
+		if(!$post_descripcion || $post_descripcion == null){
+			$post_descripcion = '';
+		}
+
+		$data_post = array(
+			'post_title' => get_the_title( $post->ID ),
+			'post_date' => get_the_date( $post->ID),
+			'post_image' => $post_image[0],
+			'post_link' => $post_link,
+			'post_description' => $post_descripcion
+		);
+
+		array_push($posts, $data_post);
+
+	endwhile;
+
+	header( "Content-Type: application/json" );
+	echo json_encode($posts);
+	exit;
+}
+
+// Get años
+add_action( 'wp_ajax_nopriv_Load_Content_Anios', 'Load_Content_Anios');
+add_action( 'wp_ajax_Load_Content_Anios', 'Load_Content_Anios' );
+
+function Load_Content_Anios() {
+	$args = array(
+		'post_type' 		=> 'acervo-digital',
+		'post_status' 		=> 'publish',
+		'posts_per_page' => -1,
+		'orderby' => 'publish_date',
+		'order' => 'DESC',
+		'tax_query'			=> array(
+			array(
+				'taxonomy' => 'acervo_categorias',
+				'field' => 'slug',
+				'terms' => $categoria
+			)
+		)
+	);
 
 
-// 	$post_content = array();
-// 	$the_query = new WP_QUERY ( $args );
+	$post_content = array();
+	$the_query = new WP_QUERY ( $args );
 
-// 	while ( $the_query->have_posts() ) :
-// 		$the_query->the_post();
-// 		$current_id = $post->ID;
+	while ( $the_query->have_posts() ) :
+		$the_query->the_post();
+		$current_id = $post->ID;
 
-// 		$content_t = get_the_content($current_id);
-// 		$text = wp_trim_words($content_t, '35');
-// 		$item = "
-//             <option value='".get_the_date( 'Y' )."'>
-//             ".get_the_date( 'Y' )."
-//         </option>
-// 		";
-// 		array_push($post_content, $item);
-// 	endwhile;
+		$content_t = get_the_content($current_id);
+		$text = wp_trim_words($content_t, '35');
+		$item = "
+            <option value='".get_the_date( 'Y' )."'>
+            ".get_the_date( 'Y' )."
+        </option>
+		";
+		array_push($post_content, $item);
+	endwhile;
 
-// 	if($post_content == '' || $post_content == null){
-// 		$item = "<option>Sin resultados de busqueda</option>";
+	if($post_content == '' || $post_content == null){
+			$item = "<option>Sin resultados de busqueda</option>";
 
-// 		array_push($post_content, $item);
-//   }
+			array_push($post_content, $item);
+	}
 
-  //array_unshift($post_content,"<option>Selecciona el año de interes</option>");
+	array_unshift($post_content,"<option>Selecciona el año de interes</option>");
 
-//   $post_content = array_unique($post_content);
-//   $post_content= array_values($post_content);
+	$post_content = array_unique($post_content);
+	$post_content= array_values($post_content);
 
 
-// 	header( "Content-Type: application/json" );
-// 	echo json_encode($post_content);
+	header( "Content-Type: application/json" );
+	echo json_encode($post_content);
 
-// 	exit;
-// }
+	exit;
+}
 
 
 

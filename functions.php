@@ -69,11 +69,11 @@ function ipa_scripts() {
         wp_enqueue_style('contacto', get_template_directory_uri().'/css/contacto.css', [], 'all');
     }
 
-    if(is_post_type_archive( 'gaceta' )){
+    if(is_page_template( 'page-gaceta.php' )){
         wp_enqueue_style('gaceta', get_template_directory_uri().'/css/gaceta.css', [], 'all');
     }
 
-    if(is_singular( 'gaceta' )){
+    if(is_post_type_archive( 'gaceta' )){
         wp_enqueue_style('gaceta-single', get_template_directory_uri().'/css/gaceta-single.css', [], 'all');
     }
 

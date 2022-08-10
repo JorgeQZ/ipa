@@ -15,7 +15,7 @@
         width: 25%;
         max-width: 400px;
         padding-left: 30px;
-        padding-right: 30px;
+        padding-right: 15px;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -49,7 +49,30 @@
         }
 
         .menu-filter{
-
+            .year-button{
+                position: relative;
+                .year-option{
+                    position: absolute;
+                    background-color: white;
+                    width: 100%;
+                    left: 0;
+                    top: calc(100% + 1px);
+                    z-index: 10;
+                    display: none;
+                }
+            }
+            .month-button{
+                position: relative;
+                .month-option{
+                    position: absolute;
+                    display: none;
+                    background-color: white;
+                    top: calc(100% + 1px);
+                    left: 0;
+                    width: 100%;
+                    z-index: 10;
+                }
+            }
         }
     }
     .grid-list{
@@ -59,15 +82,17 @@
         flex-direction: row;
         flex-wrap: wrap;
         width: 50%;
+        padding-left: 15px;
+        padding-right: 30px;
         margin-bottom: 100px;
         .item{
+            flex: 1 0 30%;
             cursor: pointer;
             min-height: 200px;
-            width: 31%;
-            min-width: 200px;
-            margin-left: 1.5%;
-            margin-bottom: 1.5%;
+            width: 30%;
+            margin: 1.5%;
             background-size: cover;
+            background-position: center;
             filter: grayscale(1);
             position: relative;
             display: flex;
@@ -76,9 +101,6 @@
             padding: 20px 30px;
             font-weight: bold;
             transition: all 300ms;
-            &:nth-child(3n){
-                margin-right: 0;
-            }
 
             .overlay{
                 position: absolute;
@@ -114,7 +136,6 @@
         max-width: 400px;
         .featured-img{
             width: 100%;
-            height: 300px;
             img{
                 max-width: 100%;
             }
@@ -131,6 +152,7 @@
             width: fit-content;
             padding: 10px 20px;
             text-transform: uppercase;
+            text-decoration: none;
         }
     }
 }
