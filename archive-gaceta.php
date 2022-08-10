@@ -35,18 +35,18 @@ $categories = wp_get_post_terms($post_id, 'gaceta_categorias',  array("fields" =
             <ul class="menu-filter">
                 <li class="year-button">
                     <span>Año</span>
-                    <ul class="year-option">
-                        <li>2022</li>
-                        <li>2021</li>
-                        <li>2019</li>
+                    <ul class="year-options">
+                        <!-- <li class="year-option">2022</li>
+                        <li class="year-option">2021</li>
+                        <li class="year-option">2019</li> -->
                     </ul>
                 </li>
                 <li class="month-button">
                     <span>Mes</span>
-                    <ul class="month-option">
-                        <li>2022</li>
-                        <li>2021</li>
-                        <li>2019</li>
+                    <ul class="month-options">
+                        <!-- <li class="month-option">2022</li>
+                        <li class="month-option">2021</li>
+                        <li class="month-option">2019</li> -->
                     </ul>
                 </li>
             </ul>

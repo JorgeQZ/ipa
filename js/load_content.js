@@ -1,7 +1,7 @@
 $ = jQuery;
 
 $(document).ready(function () {
-
+    let _categoria = '';
     $(document).on('click', '.single-gaceta-item', function (e) {
         e.preventDefault();
 
@@ -12,24 +12,30 @@ $(document).ready(function () {
     });
 
     $('.year-button').on('click', function (e) {
-        console.log($(this));
-        $('.year-option').slideToggle();
-        $('.month-option').slideUp();
+        e.preventDefault();
+
+        $('.year-options').slideToggle();
+        $('.month-options').slideUp();
     });
 
     $('.month-button').on('click', function (e) {
-        console.log($(this));
-        $('.year-option').slideUp();
+        e.preventDefault();
+        $('.year-options').slideUp();
 
-        $('.month-option').slideToggle();
+        $('.month-options').slideToggle();
+    });
+
+    $(document).on('click', '.year-option', function (e) {
+        e.preventDefault();
+        console.log($(this).text());
     });
 
     $('.cate-button').on('click', function (e) {
         e.stopPropagation();
         $('.cate-button').removeClass('active');
         $(this).addClass('active');
-        let cat = $(this).attr('data-cat');
-        change_cat(cat);
+        _categoria = $(this).attr('data-cat');
+        change_cat(_categoria);
     });
 
     function change_cat(category) {
@@ -61,6 +67,8 @@ $(document).ready(function () {
                         </div>`;
                         $('.grid-list').append(html);
                     });
+
+                    getYears(category);
                 }
 
             }, error: function (xhr, ajaxOptions, thrownError) {
@@ -70,9 +78,36 @@ $(document).ready(function () {
         });
     }
 
-    function getYears(params) {
+    function getYears(categoria = null) {
+        console.log(categoria);
+        var data = {
+            action: 'get_years',
+            categoria: categoria,
+        }
+
+        $.ajax({
+            type: "post",
+            url: ajax_var.url,
+            data: data,
+            dataType: 'JSON',
+            success: function (response) {
+                console.log(response);
+                $('.year-options').empty();
+                if (response) {
+                    response.forEach(function (element, index) {
+                        $('.year-options').append(element)
+                    });
+                }
+
+            }, error: function (xhr, ajaxOptions, thrownError) {
+                console.log(xhr.status);
+                console.log(thrownError);
+            }
+        });
     }
+
     function getMonths(params) {
 
     }
+
 });

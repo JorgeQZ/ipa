@@ -65,21 +65,21 @@ function change_category() {
 }
 
 // Get años
-add_action( 'wp_ajax_nopriv_Load_Content_Anios', 'Load_Content_Anios');
-add_action( 'wp_ajax_Load_Content_Anios', 'Load_Content_Anios' );
+add_action( 'wp_ajax_nopriv_get_years', 'get_years');
+add_action( 'wp_ajax_get_years', 'get_years' );
 
-function Load_Content_Anios() {
+function get_years() {
 	$args = array(
-		'post_type' 		=> 'acervo-digital',
+		'post_type' => 'gaceta',
 		'post_status' 		=> 'publish',
 		'posts_per_page' => -1,
 		'orderby' => 'publish_date',
 		'order' => 'DESC',
 		'tax_query'			=> array(
 			array(
-				'taxonomy' => 'acervo_categorias',
+				'taxonomy' => 'gaceta_categorias',
 				'field' => 'slug',
-				'terms' => $categoria
+				'terms' => $_POST['categoria']
 			)
 		)
 	);
@@ -87,28 +87,19 @@ function Load_Content_Anios() {
 
 	$post_content = array();
 	$the_query = new WP_QUERY ( $args );
-
 	while ( $the_query->have_posts() ) :
 		$the_query->the_post();
-		$current_id = $post->ID;
-
-		$content_t = get_the_content($current_id);
-		$text = wp_trim_words($content_t, '35');
-		$item = "
-            <option value='".get_the_date( 'Y' )."'>
-            ".get_the_date( 'Y' )."
-        </option>
-		";
+		$item = "<li value='".get_the_date( 'Y' )."'>".get_the_date( 'Y' )."</li>";
 		array_push($post_content, $item);
 	endwhile;
 
 	if($post_content == '' || $post_content == null){
-			$item = "<option>Sin resultados de busqueda</option>";
+			$item = "<li>Sin resultados de busqueda</li>";
 
 			array_push($post_content, $item);
 	}
 
-	array_unshift($post_content,"<option>Selecciona el año de interes</option>");
+	array_unshift($post_content,"<li>Selecciona el año de interes</li>");
 
 	$post_content = array_unique($post_content);
 	$post_content= array_values($post_content);

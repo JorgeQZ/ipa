@@ -65,7 +65,7 @@
 .gaceta-cont .cat-tabs .menu-filter .year-button {
   position: relative;
 }
-.gaceta-cont .cat-tabs .menu-filter .year-button .year-option {
+.gaceta-cont .cat-tabs .menu-filter .year-button .year-options {
   position: absolute;
   background-color: white;
   width: 100%;
@@ -77,7 +77,7 @@
 .gaceta-cont .cat-tabs .menu-filter .month-button {
   position: relative;
 }
-.gaceta-cont .cat-tabs .menu-filter .month-button .month-option {
+.gaceta-cont .cat-tabs .menu-filter .month-button .month-options {
   position: absolute;
   display: none;
   background-color: white;
