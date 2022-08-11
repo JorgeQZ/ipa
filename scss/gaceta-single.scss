@@ -73,15 +73,16 @@
                     font-weight: bold;
                 }
             }
-           
+
         }
     }
     .grid-list{
         display: flex;
-        align-items: stretch;
-        justify-content: start;
+        align-items: flex-start;
+        justify-content: flex-start;
         flex-direction: row;
         flex-wrap: wrap;
+        height: fit-content;
         width: 50%;
         padding-left: 15px;
         padding-right: 30px;
@@ -91,6 +92,7 @@
             cursor: pointer;
             height: 200px;
             width: 30%;
+            max-width: 30%;
             margin: 1.5%;
             background-size: cover;
             background-position: center;
@@ -109,7 +111,7 @@
                 left: 0;
                 width: 100%;
                 height: 100%;
-                // background-color: $verde;
+                background-color: rgba(black, 0.4);
                 opacity: 0.6;
                 transition: all 300ms;
             }
@@ -162,18 +164,16 @@
     }
 }
 
-
-
 @media screen and (max-width: 1023px) {
     .gaceta-cont{
       flex-wrap: wrap;
       flex-direction: column;
-    
+
         .column{
             flex: 1 0 100%;
             padding-top: 10px;
         }
-    
+
         .cat-tabs{
             width: 100%;
             max-width: 100%;
@@ -182,11 +182,10 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-          
+
         }
         .grid-list{
             display: flex;
-         
             flex-direction: row;
             flex-wrap: wrap;
             width: 100%;
@@ -201,18 +200,23 @@
                 margin: 1.5%;
             }
         }
-    
+
         .post-item{
             width: 100%;
-            
+
             padding-left: 30px;
             padding-right: 30px;
             padding-bottom: 60px;
             padding-top: 60px;
             max-width: 100%;
-        
+
+            .featured-img{
+                text-align: center;
+                margin: 0 auto;
+            }
             .button{
                 padding: 10px 5px;
+                margin: 0 auto;
             }
         }
     }

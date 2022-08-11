@@ -78,11 +78,15 @@ header{
                         justify-content: center;
                         padding: 5px;
                         margin: 5px;
-                        font-size: $small;
+                        font-size: 12px;
                         a{
                             text-decoration: none;
                             color: #8cc540;
                             cursor: pointer;
+                            transition: all 300ms;
+                            &:hover{
+                                color: $azul;
+                            }
                         }
                     }
                 }

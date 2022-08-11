@@ -1,102 +1,164 @@
-<?php get_header();
+<?php get_header(); ?>
 
 
-
-//Current post
-$post_id = $_REQUEST['postid'];
-
-$post_image = wp_get_attachment_image_src( get_post_thumbnail_id( $post_id ), 'single-post-thumbnail' );
-$post_link = get_field('url_de_interes',  $post_id );
-$descripcion = get_field('descripcion',  $post_id );
-
-$categories = wp_get_post_terms($post_id, 'gaceta_categorias',  array("fields" => "names"));
-
-
-
-?>
-<div class="main-content">
-    <div class="container gaceta-cont">
-        <div class="column cat-tabs">
-            <ul class="menu-cat">
-
-                <?php
-                    // Categorías en lista
-                    $terms = get_terms( array(
-                        'taxonomy' => 'gaceta_categorias',
-                        'hide_empty' => true,
-                    ) );
-
-                    foreach ( $terms as $term ) {
-                        echo '<li class="cate-button" data-cat="'.$term->name.'">'.$term->name.'</li>';
-                    }
-                ?>
-            </ul>
-
-            <div class="menu-filter">
-                <select class="year-button">
-                    <option value="">Año</option>
-<!--                     
-                    <ul class="year-options">
-                        <!-- <li class="year-option">2022</li>
-                        <li class="year-option">2021</li>
-                        <li class="year-option">2019</li> -->
-                    <!-- </ul> -->
-                </select>
-                <select class="month-button">
-                    <option value="">Mes</option>
-                    <!-- <span>Mes</span>
-                    <ul class="month-options">
-                        <!-- <li class="month-option">2022</li>
-                        <li class="month-option">2021</li>
-                        <li class="month-option">2019</li> -->
-                    <!-- </ul> -->
-                </select>
-            </div>
-        </div>
-        <div class="column grid-list">
-
-            <?php
-                $args = array(
-                    'post_type' => 'gaceta',
-                    'post_status' => 'publish',
-                    'posts_per_page' => -1,
-                    'orderby' => 'DATE',
-                    'order' => 'DESC',
-
-                );
-
-                $loop = new WP_Query( $args );
-                while ( $loop->have_posts() ) : $loop->the_post();
-                $loop_post_image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' )[0];
-                $loop_post_link = get_field('url_de_interes',  $post->ID );
-                $loop_descripcion = get_field('descripcion',  $post->ID );
-                ?>
-                <div
-                data-link="<?php echo $loop_post_link; ?>"
-                data-image="<?php echo $loop_post_image; ?>"
-                data-description="<?php echo $loop_descripcion; ?>"
-                class="item single-gaceta-item"
-                style="background-image: url(<?php echo get_the_post_thumbnail_url( get_the_ID()); ?>)">
-                    <div class="overlay"></div>
-                    <div class="title"><?php the_title(); ?></div>
-                    <div class="desc"><?php the_date(); ?></div>
-                </div>
-                <?php
-                endwhile;
-
-                wp_reset_postdata();
-            ?>
-        </div>
-        <div class="column post-item">
-            <div class="single-gaceta-main-img featured-img">
-                <img src="<?php echo $post_image[0] ?>" alt="">
-            </div>
-            <div class="text single-gaceta-main-text">
-              <?php echo $descripcion; ?>
-            </div>
-            <a target="_blank" class="button single-gaceta-main-button" href="<?php echo $post_link ?>">ver más</a>
-        </div>
+<div class="banner-cont" style="background-image: url(<?php echo get_template_directory_uri(  ).'/img/banner_capacitacion.png'; ?>;">
+    <div class="title-banner">
+        <?php the_title(); ?>
     </div>
 </div>
 
-<?php get_footer(); ?>
+<div class="main-content">
+    <div class="container">
+        <br>
+        <br>
+        <br>
+        <p style="color: #243063; font-weight: bolder; font-size: 30px; text-align: center;">¡Conoce todos nuestros cursos!</p>
+
+        <br>
+        <br>
+
+        <div class="tabs-container">
+            <div class="tabs-mobile">
+                <?php
+                $args = array(
+                    'post_type' => 'capacitacion',
+                    'post_status' => 'publish',
+                    'posts_per_page' => 1,
+                    'orderby' => 'DATE',
+                    'order' => 'DESC'
+                );
+                $loop = new WP_Query( $args );
+                ?>
+                <div class="active-tab">
+                    <?php
+                    while ( $loop->have_posts() ) :
+                        $loop->the_post();
+                        the_title();
+                    endwhile;
+                    wp_reset_query(); ?>
+                    </div>
+                <div class="burguer-tabs">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+            <div class="tabs">
+                <?php
+                  $args = array(
+                    'post_type' => 'capacitacion',
+                    'post_status' => 'publish',
+                    'posts_per_page' => 8,
+                    'orderby' => 'DATE',
+                    'order' => 'DESC',
+                );
+
+                $loop = new WP_Query( $args );
+                $aux_tab = 0;
+
+                while ( $loop->have_posts() ) :
+                    $aux_tab ++;
+                    $loop->the_post();
+                    ?>
+                    <div class="tab-item <?php if($aux_tab == 1){echo 'active';}?>" id="<?php echo $post->ID;?>"><?php the_title(); ?></div>
+                    <?php
+                endwhile;
+                ?>
+
+            </div>
+            <div class="tabs-content">
+                <?php
+                $aux_content = 0;
+                while ( $loop->have_posts() ) :
+                    $aux_content ++;
+                    $loop->the_post();
+                    ?>
+                    <div class="tab-content <?php if($aux_content == 1){echo 'active';}?>" data-tab-content="<?php echo $post->ID.'-content'; ?>">
+                        <?php the_content(); ?>
+                    </div>
+                    <?php
+                endwhile;
+                ?>
+            </div>
+        </div>
+
+        <?php
+
+        $aux_calendar_container= 0;
+        while ( $loop->have_posts() ) :
+            $aux_calendar_container ++;
+            $loop->the_post();
+            $calendario = get_field('calendario', $post->ID);
+            ?>
+            <div class="tab-calendar-container<?php if($aux_calendar_container == 1){echo ' active';}?>" data-calendar="<?php echo $post->ID.'-calendar'; ?>">
+                <div class="tab-calendar-dropdown">
+                    <div class="calendar-option-selected" >
+                        <span data-selected-month="<?php echo $post->ID.'-selected'; ?>">
+                            <?php
+                            if($calendario[0]['mes']){
+                                echo $calendario[0]['mes'];
+                            } else{
+                                echo 'Sin calendario';
+                            }
+                            ?>
+                        </span>
+                        <div class="button-calendar-tab" data-button-burguer="<?php echo $post->ID.'-calendar'; ?>">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                        </div>
+                    <ul class="calendar-menu" data-menu-months="<?php echo $post->ID.'-calendar';?>">
+                    <?php
+                        foreach($calendario as $mes):
+                            echo '<li class="calendar-option" data-menu-calendar="'.$post->ID.'-calendar" data-selected-month="'.$post->ID.'-selected" data-button="'.$post->ID.'-'.$mes['mes'].'">'.$mes['mes'].'</li>';
+                        endforeach;
+                    ?>
+                    </ul>
+                </div>
+                <?php
+                 $aux_calendars = 0;
+                foreach($calendario as $mes):
+                    $aux_calendars ++;
+
+                ?>
+                <div class="tab-calendar <?php if($aux_calendars == 1){echo 'active';}?>" data-calendar-content="<?php echo $post->ID.'-'.$mes['mes']; ?>">
+                    <table class="calendar" cellspacing="0" cellpadding="0">
+                        <thead>
+                            <th>fechas</th>
+                            <th>curso</th>
+                            <th>socio caintra</th>
+                            <th>no socio</th>
+                            <th>duración</th>
+                        </thead>
+                        <tbody>
+                        <?php
+                            foreach($mes['cursos'] as $cursos):
+                                echo '<tr>';
+                                echo '<td>'.$cursos['fechas'].'</td>';
+                                echo '<td>'.$cursos['curso'].'</td>';
+                                echo '<td>'.$cursos['socio_caintra'].'</td>';
+                                echo '<td>'.$cursos['no_socio'].'</td>';
+                                echo '<td>'.$cursos['duracion'].'</td>';
+                                echo '</tr>';
+                            endforeach;
+                        ?>
+                        </tbody>
+                    </table>
+                </div>
+                <?php  endforeach; ?>
+            </div>
+            <?php
+        endwhile;
+        wp_reset_query();
+        ?>
+    </div>
+    <div class="form-container">
+
+        <p class="head-form">¡Conoce todos nuestros cursos!</p>
+        <?php echo do_shortcode( '[contact-form-7 id="129" title="Capacitacion"]')?>
+    </div>
+</div>
+<?php
+get_footer();
+?>

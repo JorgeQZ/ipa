@@ -37,8 +37,6 @@ include "inc/gaceta_functions.php";
 
 
 function ipa_scripts() {
-    // wp_register_script( 'jQuery', '', false);
-    // wp_enqueue_script('jQuery');
     wp_enqueue_script( 'custom',get_template_directory_uri(  ).'/js/custom.js', 'jquery');
     wp_enqueue_style('generals', get_template_directory_uri().'/css/generals.css', [], 'all');
 
@@ -47,7 +45,7 @@ function ipa_scripts() {
     }
 
 
-    if(is_page_template( 'page-capacitacion.php' )){
+    if(is_page_template( 'page-capacitacion.php' ) || is_post_type_archive( 'capacitacion' || is_singular('capacitacion') || is_single('capacitacion'))){
         wp_enqueue_style('capacitacion', get_template_directory_uri().'/css/capacitacion.css', [], 'all');
     }
 
@@ -178,18 +176,18 @@ function ipa_posttype_gaceta(){
 
 function taxonomias_gaceta() {
     register_taxonomy(
-        'gaceta_categorias',  //The name of the taxonomy. Name should be in slug form (must not contain capital letters or spaces).
-        'gaceta',        //post type name
+        'gaceta_categorias',
+        'gaceta',
         array(
             'hierarchical' => true,
-            'label' => 'Categoría gaceta',  //Display name
+            'label' => 'Categoría gaceta',
             'query_var' => true,
             'show_ui' => true,
             'show_in_menu' => true,
             'show_admin_column' => true,
             'rewrite' => array(
-                'slug' => 'slug_gaceta', // This controls the base slug that will display before each term
-                'with_front' => false // Don't display the category base before
+                'slug' => 'slug_gaceta',
+                'with_front' => false
             )
         )
     );
@@ -235,23 +233,81 @@ function ipa_posttype_capacitacion(){
 
 function taxonomias_capacitacion() {
     register_taxonomy(
-        'capacitacion_categorias',  //The name of the taxonomy. Name should be in slug form (must not contain capital letters or spaces).
-        'capacitacion',        //post type name
+        'capacitacion_categorias',
+        'capacitacion',
         array(
             'hierarchical' => true,
-            'label' => 'Categoría capacitación',  //Display name
+            'label' => 'Categoría capacitación',
             'query_var' => true,
             'show_ui' => true,
             'show_in_menu' => true,
             'show_admin_column' => true,
             'rewrite' => array(
-                'slug' => 'slug_capacitacion', // This controls the base slug that will display before each term
-                'with_front' => false // Don't display the category base before
+                'slug' => 'slug_capacitacion',
+                'with_front' => false
             )
         )
     );
   }
   add_action( 'init', 'taxonomias_capacitacion');
+//
+
+
+// Servicios
+
+add_action( 'init', 'ipa_posttype_servicio' );
+
+function ipa_posttype_servicio(){
+    $labels = array(
+        'name'                => __('Servicios'),
+        'singular_name'       => __('Servicio'),
+        'add_new'             => __('Agregar nuevo post'),
+        'add_new_item'        => __('Agregar nuevo post'),
+        'edit_item'           => __('Editar post'),
+        'add_new'             => __('Agregar nuevo post'),
+        'all_items'           => __('Todos los posts'),
+        'view_item'           => __('Ver posts'),
+        'search_items'        => __('Buscar posts'),
+        'not_found'           => __('No se han encontrado posts de servicio.'),
+		'not_found_in_trash'  => __('No se han encontrado posts de servicio en la papelera')
+    );
+
+
+    $args = array(
+        'labels'            => $labels,
+        'description'       => '',
+        'public'            => true,
+        'menu_position'     => 5,
+        'supports'          => array( 'title', 'editor', 'thumbnail', 'excerpt'),
+        'has_archive'       => true,
+        'show_in_admin_bar' => true,
+        'show_in_nav_menus' => true,
+        'query_var'         => 'servicio'
+      );
+
+      register_post_type( 'servicio', $args);
+}
+
+
+function taxonomias_servicio() {
+    register_taxonomy(
+        'servicio_categorias',
+        'servicio',
+        array(
+            'hierarchical' => true,
+            'label' => 'Categoría de servicios',
+            'query_var' => true,
+            'show_ui' => true,
+            'show_in_menu' => true,
+            'show_admin_column' => true,
+            'rewrite' => array(
+                'slug' => 'slug_servicio',
+                'with_front' => false
+            )
+        )
+    );
+  }
+  add_action( 'init', 'taxonomias_servicio');
 //
 // Miembros de IPA
 
