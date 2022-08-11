@@ -195,6 +195,63 @@ function taxonomias_gaceta() {
     );
   }
   add_action( 'init', 'taxonomias_gaceta');
+
+
+// Capacitaciones
+
+add_action( 'init', 'ipa_posttype_capacitacion' );
+
+function ipa_posttype_capacitacion(){
+    $labels = array(
+        'name'                => __('Capacitación'),
+        'singular_name'       => __('Capacitación'),
+        'add_new'             => __('Agregar nuevo post'),
+        'add_new_item'        => __('Agregar nuevo post'),
+        'edit_item'           => __('Editar post'),
+        'add_new'             => __('Agregar nuevo post'),
+        'all_items'           => __('Todos los posts'),
+        'view_item'           => __('Ver posts'),
+        'search_items'        => __('Buscar posts'),
+        'not_found'           => __('No se han encontrado posts de capacitación.'),
+		'not_found_in_trash'  => __('No se han encontrado posts de capacitación en la papelera')
+    );
+
+
+    $args = array(
+        'labels'            => $labels,
+        'description'       => '',
+        'public'            => true,
+        'menu_position'     => 5,
+        'supports'          => array( 'title', 'editor', 'thumbnail', 'excerpt'),
+        'has_archive'       => true,
+        'show_in_admin_bar' => true,
+        'show_in_nav_menus' => true,
+        'query_var'         => 'capacitacion'
+      );
+
+      register_post_type( 'capacitacion', $args);
+}
+
+
+function taxonomias_capacitacion() {
+    register_taxonomy(
+        'capacitacion_categorias',  //The name of the taxonomy. Name should be in slug form (must not contain capital letters or spaces).
+        'capacitacion',        //post type name
+        array(
+            'hierarchical' => true,
+            'label' => 'Categoría capacitación',  //Display name
+            'query_var' => true,
+            'show_ui' => true,
+            'show_in_menu' => true,
+            'show_admin_column' => true,
+            'rewrite' => array(
+                'slug' => 'slug_capacitacion', // This controls the base slug that will display before each term
+                'with_front' => false // Don't display the category base before
+            )
+        )
+    );
+  }
+  add_action( 'init', 'taxonomias_capacitacion');
 //
 // Miembros de IPA
 
