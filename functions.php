@@ -163,6 +163,7 @@ function ipa_posttype_gaceta(){
         'description'       => '',
         'public'            => true,
         'menu_position'     => 5,
+        'menu_icon' => 'dashicons-text-page',
         'supports'          => array( 'title', 'thumbnail', 'excerpt'),
         'has_archive'       => true,
         'show_in_admin_bar' => true,
@@ -209,6 +210,7 @@ function ipa_posttype_capacitacion(){
         'add_new'             => __('Agregar nuevo post'),
         'all_items'           => __('Todos los posts'),
         'view_item'           => __('Ver posts'),
+
         'search_items'        => __('Buscar posts'),
         'not_found'           => __('No se han encontrado posts de capacitación.'),
 		'not_found_in_trash'  => __('No se han encontrado posts de capacitación en la papelera')
@@ -220,6 +222,7 @@ function ipa_posttype_capacitacion(){
         'description'       => '',
         'public'            => true,
         'menu_position'     => 5,
+        'menu_icon' => 'dashicons-awards',
         'supports'          => array( 'title', 'editor', 'thumbnail', 'excerpt'),
         'has_archive'       => true,
         'show_in_admin_bar' => true,
@@ -268,6 +271,7 @@ function ipa_posttype_servicio(){
         'all_items'           => __('Todos los posts'),
         'view_item'           => __('Ver posts'),
         'search_items'        => __('Buscar posts'),
+
         'not_found'           => __('No se han encontrado posts de servicio.'),
 		'not_found_in_trash'  => __('No se han encontrado posts de servicio en la papelera')
     );
@@ -278,6 +282,7 @@ function ipa_posttype_servicio(){
         'description'       => '',
         'public'            => true,
         'menu_position'     => 5,
+        'menu_icon' => 'dashicons-screenoptions',
         'supports'          => array( 'title', 'editor', 'thumbnail', 'excerpt'),
         'has_archive'       => true,
         'show_in_admin_bar' => true,
@@ -315,7 +320,7 @@ add_action( 'init', 'ipa_members_gaceta' );
 
 function ipa_members_gaceta(){
     $labels = array(
-        'name'                => __('Miembro'),
+        'name'                => __('Miembros'),
         'singular_name'       => __('Miembro'),
         'add_new'             => __('Agregar nuevo post'),
         'add_new_item'        => __('Agregar nuevo post'),
@@ -334,6 +339,7 @@ function ipa_members_gaceta(){
         'description'       => '',
         'public'            => true,
         'menu_position'     => 5,
+        'menu_icon' => 'dashicons-admin-users',
         'supports'          => array( 'title', 'thumbnail', 'excerpt'),
         'has_archive'       => true,
         'show_in_admin_bar' => true,
