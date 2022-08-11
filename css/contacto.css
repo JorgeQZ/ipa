@@ -2,6 +2,7 @@
   padding-top: 50px;
   padding-bottom: 50px;
 }
+
 .members-container .title {
   text-align: center;
   font-size: 30px;
@@ -9,6 +10,7 @@
   color: #0e526c;
   padding: 30px;
 }
+
 .members-container .grid-members {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -26,6 +28,7 @@
       -ms-flex-direction: row;
           flex-direction: row;
 }
+
 .members-container .grid-members .item {
   width: 33%;
   min-width: 230px;
@@ -43,14 +46,17 @@
       -ms-flex-direction: column;
           flex-direction: column;
 }
+
 .members-container .grid-members .item img {
   max-width: 200px;
   margin: 10px auto;
 }
+
 .members-container .grid-members .item .desc {
   color: #0e526c;
   text-align: center;
 }
+
 .members-container .grid-members .item .social-cont {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -63,6 +69,7 @@
           align-items: center;
   margin: 5px;
 }
+
 .members-container .grid-members .item .social-cont .link {
   margin: 0 5px;
   padding: 0;
@@ -82,11 +89,13 @@
   transition: all 300ms;
   overflow: hidden;
 }
+
 .members-container .grid-members .item .social-cont .link img {
   width: 30px;
   height: 30px;
   position: relative;
 }
+
 .members-container .grid-members .item .social-cont .link:hover {
   background-color: #0e526c;
   -webkit-transform: scale(1.2);

@@ -37,6 +37,8 @@ include "inc/gaceta_functions.php";
 
 
 function ipa_scripts() {
+    // wp_register_script( 'jQuery', '', false);
+    // wp_enqueue_script('jQuery');
     wp_enqueue_script( 'custom',get_template_directory_uri(  ).'/js/custom.js', 'jquery');
     wp_enqueue_style('generals', get_template_directory_uri().'/css/generals.css', [], 'all');
 

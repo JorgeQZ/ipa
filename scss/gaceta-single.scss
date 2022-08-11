@@ -7,6 +7,8 @@
     max-width: 100%;
     padding: 0;
 
+    min-height: calc( 100vh - 90px);
+
     .column{
         padding-top: 100px;
     }
@@ -49,30 +51,29 @@
         }
 
         .menu-filter{
-            .year-button{
-                position: relative;
-                .year-options{
-                    position: absolute;
-                    background-color: white;
-                    width: 100%;
-                    left: 0;
-                    top: calc(100% + 1px);
-                    z-index: 10;
-                    display: none;
+            .year-button, .month-button{
+                appearance: none;
+                width: 100%;
+                border: none;
+                display: flex;
+                align-items: center;
+                justify-content: start;
+                height: 50px;
+                cursor: pointer;
+                color: $gris;
+                border-bottom: 1px solid $verde;
+                transition: all 300ms;
+                text-transform: capitalize;
+                option{
+                    font-size: 24px;
+                }
+
+                &.active{
+                    color: $azul;
+                    font-weight: bold;
                 }
             }
-            .month-button{
-                position: relative;
-                .month-options{
-                    position: absolute;
-                    display: none;
-                    background-color: white;
-                    top: calc(100% + 1px);
-                    left: 0;
-                    width: 100%;
-                    z-index: 10;
-                }
-            }
+           
         }
     }
     .grid-list{
@@ -88,7 +89,7 @@
         .item{
             flex: 1 0 30%;
             cursor: pointer;
-            min-height: 200px;
+            height: 200px;
             width: 30%;
             margin: 1.5%;
             background-size: cover;
@@ -153,6 +154,66 @@
             padding: 10px 20px;
             text-transform: uppercase;
             text-decoration: none;
+            transition: all 300ms;
+            &:hover{
+                background-color: $verde;
+            }
+        }
+    }
+}
+
+
+
+@media screen and (max-width: 1023px) {
+    .gaceta-cont{
+      flex-wrap: wrap;
+      flex-direction: column;
+    
+        .column{
+            flex: 1 0 100%;
+            padding-top: 10px;
+        }
+    
+        .cat-tabs{
+            width: 100%;
+            max-width: 100%;
+            padding-left: 0px;
+            padding-right: 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+          
+        }
+        .grid-list{
+            display: flex;
+         
+            flex-direction: row;
+            flex-wrap: wrap;
+            width: 100%;
+            padding-left: 15px;
+            padding-right: 30px;
+            margin-bottom: 100px;
+            .item{
+                flex: 1 0 45%;
+                cursor: pointer;
+                min-height: 200px;
+                width: 30%;
+                margin: 1.5%;
+            }
+        }
+    
+        .post-item{
+            width: 100%;
+            
+            padding-left: 30px;
+            padding-right: 30px;
+            padding-bottom: 60px;
+            padding-top: 60px;
+            max-width: 100%;
+        
+            .button{
+                padding: 10px 5px;
+            }
         }
     }
 }

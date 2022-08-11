@@ -10,10 +10,13 @@
           justify-content: space-between;
   max-width: 100%;
   padding: 0;
+  min-height: calc( 100vh - 90px);
 }
+
 .gaceta-cont .column {
   padding-top: 100px;
 }
+
 .gaceta-cont .cat-tabs {
   width: 25%;
   max-width: 400px;
@@ -30,6 +33,7 @@
       -ms-flex-align: center;
           align-items: center;
 }
+
 .gaceta-cont .cat-tabs .menu-cat, .gaceta-cont .cat-tabs .menu-filter {
   list-style: none;
   margin: 0;
@@ -38,6 +42,7 @@
   max-width: 280px;
   min-width: 80%;
 }
+
 .gaceta-cont .cat-tabs .menu-cat li, .gaceta-cont .cat-tabs .menu-filter li {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -55,37 +60,49 @@
   -webkit-transition: all 300ms;
   transition: all 300ms;
 }
+
 .gaceta-cont .cat-tabs .menu-cat li.active, .gaceta-cont .cat-tabs .menu-filter li.active {
   color: #0e526c;
   font-weight: bold;
 }
+
 .gaceta-cont .cat-tabs .menu-cat li:hover, .gaceta-cont .cat-tabs .menu-filter li:hover {
   color: #0e526c;
 }
-.gaceta-cont .cat-tabs .menu-filter .year-button {
-  position: relative;
-}
-.gaceta-cont .cat-tabs .menu-filter .year-button .year-options {
-  position: absolute;
-  background-color: white;
+
+.gaceta-cont .cat-tabs .menu-filter .year-button, .gaceta-cont .cat-tabs .menu-filter .month-button {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
   width: 100%;
-  left: 0;
-  top: calc(100% + 1px);
-  z-index: 10;
-  display: none;
+  border: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  height: 50px;
+  cursor: pointer;
+  color: #b2b2b2;
+  border-bottom: 1px solid #8cc540;
+  -webkit-transition: all 300ms;
+  transition: all 300ms;
+  text-transform: capitalize;
 }
-.gaceta-cont .cat-tabs .menu-filter .month-button {
-  position: relative;
+
+.gaceta-cont .cat-tabs .menu-filter .year-button option, .gaceta-cont .cat-tabs .menu-filter .month-button option {
+  font-size: 24px;
 }
-.gaceta-cont .cat-tabs .menu-filter .month-button .month-options {
-  position: absolute;
-  display: none;
-  background-color: white;
-  top: calc(100% + 1px);
-  left: 0;
-  width: 100%;
-  z-index: 10;
+
+.gaceta-cont .cat-tabs .menu-filter .year-button.active, .gaceta-cont .cat-tabs .menu-filter .month-button.active {
+  color: #0e526c;
+  font-weight: bold;
 }
+
 .gaceta-cont .grid-list {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -107,12 +124,13 @@
   padding-right: 30px;
   margin-bottom: 100px;
 }
+
 .gaceta-cont .grid-list .item {
   -webkit-box-flex: 1;
       -ms-flex: 1 0 30%;
           flex: 1 0 30%;
   cursor: pointer;
-  min-height: 200px;
+  height: 200px;
   width: 30%;
   margin: 1.5%;
   background-size: cover;
@@ -135,6 +153,7 @@
   -webkit-transition: all 300ms;
   transition: all 300ms;
 }
+
 .gaceta-cont .grid-list .item .overlay {
   position: absolute;
   top: 0;
@@ -145,10 +164,12 @@
   -webkit-transition: all 300ms;
   transition: all 300ms;
 }
+
 .gaceta-cont .grid-list .item .title, .gaceta-cont .grid-list .item .desc {
   color: white;
   position: relative;
 }
+
 .gaceta-cont .grid-list .item:hover {
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
@@ -156,9 +177,11 @@
   -webkit-filter: grayscale(0);
           filter: grayscale(0);
 }
+
 .gaceta-cont .grid-list .item:hover .overlay {
   background-color: #8cc540;
 }
+
 .gaceta-cont .post-item {
   width: 25%;
   background-color: #f1f1f4;
@@ -166,17 +189,21 @@
   padding-right: 30px;
   max-width: 400px;
 }
+
 .gaceta-cont .post-item .featured-img {
   width: 100%;
 }
+
 .gaceta-cont .post-item .featured-img img {
   max-width: 100%;
 }
+
 .gaceta-cont .post-item .text {
   margin: 20px 0;
   color: #0e526c;
   letter-spacing: 1px;
 }
+
 .gaceta-cont .post-item .button {
   cursor: pointer;
   background-color: #0e526c;
@@ -187,4 +214,78 @@
   padding: 10px 20px;
   text-transform: uppercase;
   text-decoration: none;
+  -webkit-transition: all 300ms;
+  transition: all 300ms;
+}
+
+.gaceta-cont .post-item .button:hover {
+  background-color: #8cc540;
+}
+
+@media screen and (max-width: 1023px) {
+  .gaceta-cont {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .gaceta-cont .column {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 0 100%;
+            flex: 1 0 100%;
+    padding-top: 10px;
+  }
+  .gaceta-cont .cat-tabs {
+    width: 100%;
+    max-width: 100%;
+    padding-left: 0px;
+    padding-right: 15px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .gaceta-cont .grid-list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    width: 100%;
+    padding-left: 15px;
+    padding-right: 30px;
+    margin-bottom: 100px;
+  }
+  .gaceta-cont .grid-list .item {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 0 45%;
+            flex: 1 0 45%;
+    cursor: pointer;
+    min-height: 200px;
+    width: 30%;
+    margin: 1.5%;
+  }
+  .gaceta-cont .post-item {
+    width: 100%;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 60px;
+    padding-top: 60px;
+    max-width: 100%;
+  }
+  .gaceta-cont .post-item .button {
+    padding: 10px 5px;
+  }
 }

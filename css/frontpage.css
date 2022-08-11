@@ -11,6 +11,7 @@
       -ms-flex-pack: center;
           justify-content: center;
 }
+
 .banner .column {
   width: 50%;
   display: -webkit-box;
@@ -25,13 +26,16 @@
   font-weight: bold;
   overflow: hidden;
 }
+
 .banner .column span {
   color: #8cc540;
 }
+
 .banner .column img {
   height: auto;
   width: 100%;
 }
+
 .banner .column:last-child {
   padding: 90px;
 }
@@ -44,17 +48,21 @@
       -ms-flex-align: stretch;
           align-items: stretch;
 }
+
 .img-text .column {
   width: 50%;
   color: #0e526c;
   overflow: hidden;
 }
+
 .img-text .column img {
   height: 100%;
 }
+
 .img-text .column:first-child {
   padding: 90px;
 }
+
 .img-text .column:first-child .title {
   font-size: 30px;
   color: #8cc540;
@@ -79,6 +87,7 @@
       -ms-flex-direction: row;
           flex-direction: row;
 }
+
 .grid-services .item {
   width: 25%;
   min-height: 260px;
@@ -101,17 +110,20 @@
   -webkit-transition: all 300ms;
   transition: all 300ms;
 }
+
 .grid-services .item .text {
-  background: rgb(2, 0, 36);
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(2, 0, 36, 0)), color-stop(29%, rgba(14, 82, 108, 0.7529885166)), to(rgb(14, 82, 108)));
-  background: linear-gradient(180deg, rgba(2, 0, 36, 0) 0%, rgba(14, 82, 108, 0.7529885166) 29%, rgb(14, 82, 108) 100%);
+  background: #020024;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(2, 0, 36, 0)), color-stop(29%, rgba(14, 82, 108, 0.752989)), to(#0e526c));
+  background: linear-gradient(180deg, rgba(2, 0, 36, 0) 0%, rgba(14, 82, 108, 0.752989) 29%, #0e526c 100%);
   padding-top: 20px;
 }
+
 .grid-services .item .text .title {
   padding: 0px 10px;
   font-weight: bold;
   opacity: 1;
 }
+
 .grid-services .item .text .desc {
   max-height: 0;
   -webkit-transition: all 300ms;
@@ -119,10 +131,12 @@
   opacity: 0;
   padding: 10px;
 }
+
 .grid-services .item:hover {
   -webkit-filter: grayscale(0);
           filter: grayscale(0);
 }
+
 .grid-services .item:hover .desc {
   opacity: 1;
   max-height: 100px;
@@ -136,6 +150,7 @@
   font-size: 30px;
   padding: 30px 60px;
 }
+
 .services-button-cont .button {
   background-color: #8cc540;
   padding: 10px 30px;
@@ -155,9 +170,11 @@
   -webkit-transition: all 300ms;
   transition: all 300ms;
 }
+
 .services-button-cont .button img {
   width: 20px;
 }
+
 .services-button-cont .button:hover {
   background-color: #0e526c;
 }
@@ -190,18 +207,22 @@
       -ms-flex-align: stretch;
           align-items: stretch;
 }
+
 .img-text-reverse .column {
   width: 50%;
   color: white;
   overflow: hidden;
 }
+
 .img-text-reverse .column img {
   height: 100%;
 }
+
 .img-text-reverse .column:last-child {
   padding: 90px;
   background-color: #0e526c;
 }
+
 .img-text-reverse .column:last-child .title {
   font-size: 30px;
   color: #8cc540;
@@ -218,6 +239,7 @@
           justify-content: center;
   padding: 90px;
 }
+
 .grid-img-text .item {
   width: 50%;
   display: -webkit-box;
@@ -227,14 +249,17 @@
       -ms-flex-align: center;
           align-items: center;
 }
+
 .grid-img-text .item .column {
   padding: 10px;
 }
+
 .grid-img-text .item .column .title {
   font-size: 30px;
   color: #8cc540;
   font-weight: bold;
 }
+
 .grid-img-text .item .column .desc {
   color: #0e526c;
 }
@@ -248,6 +273,7 @@
           justify-content: space-between;
   padding: 90px;
 }
+
 .grid-columns .item {
   width: 30%;
   display: -webkit-box;
@@ -262,20 +288,25 @@
           flex-direction: column;
   margin: 0 10px;
 }
+
 .grid-columns .item .column {
   width: 100%;
 }
+
 .grid-columns .item .column img {
   width: 100%;
 }
+
 .grid-columns .item .column .title {
   color: #8cc540;
   font-weight: bold;
   margin: 10px 0;
 }
+
 .grid-columns .item .column .desc {
   color: #0e526c;
 }
+
 .grid-columns .item .column .button {
   background-color: #8cc540;
   width: -webkit-fit-content;
@@ -295,9 +326,11 @@
   -webkit-transition: all 300ms;
   transition: all 300ms;
 }
+
 .grid-columns .item .column .button img {
   width: 20px;
 }
+
 .grid-columns .item .column .button:hover {
   background-color: #0e526c;
 }

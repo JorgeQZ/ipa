@@ -4,38 +4,37 @@ $(document).ready(function () {
     let _categoria = '';
     $(document).on('click', '.single-gaceta-item', function (e) {
         e.preventDefault();
-
         $('.single-gaceta-main-img img').attr('src', $(this).attr('data-image'));
         $('.single-gaceta-main-button').attr('href', $(this).attr('data-link'));
         $('.single-gaceta-main-text').html($(this).attr('data-description'));
-
     });
 
-    $('.year-button').on('click', function (e) {
-        e.preventDefault();
-
-        $('.year-options').slideToggle();
-        $('.month-options').slideUp();
-    });
-
-    $('.month-button').on('click', function (e) {
-        e.preventDefault();
-        $('.year-options').slideUp();
-
-        $('.month-options').slideToggle();
-    });
-
-    $(document).on('click', '.year-option', function (e) {
-        e.preventDefault();
-        console.log($(this).text());
-    });
-
+  
     $('.cate-button').on('click', function (e) {
         e.stopPropagation();
         $('.cate-button').removeClass('active');
         $(this).addClass('active');
         _categoria = $(this).attr('data-cat');
         change_cat(_categoria);
+    });
+
+    $('.year-button').on('change', function(e){
+        $(this).addClass('active');
+        let _year = $(this).val();
+        console.log(_year);
+        let _cat = $('.cate-button.active').attr('data-cat');
+        getMonths(_cat, _year);
+
+        $(".single-gaceta-item").show();
+        $(".single-gaceta-item:not([data-date_year='"+_year+"'])").hide();
+        
+    });
+
+    $('.month-button').on('change', function(e){
+        $(this).addClass('active');
+        let _date_month = $(this).val();
+        
+        $(".single-gaceta-item:not([data-date_month='"+_date_month+"'])").hide();
     });
 
     function change_cat(category) {
@@ -50,12 +49,13 @@ $(document).ready(function () {
             data: data,
             dataType: 'JSON',
             success: function (response) {
-                console.log(response);
                 if (response) {
                     $('.grid-list').empty();
                     response.forEach(function (element, index) {
-                        // $('#anios').append(element);
                         let html = `<div
+                        data-date_year="`+ element.post_date_year +`"
+                        data-date_month="`+ element.post_date_month +`"
+                        data-date="`+ element.post_date +`"
                         data-link="`+ element.post_link + `"
                         data-image="`+ element.post_image + `"
                         data-description="`+ element.post_description + `"
@@ -79,7 +79,7 @@ $(document).ready(function () {
     }
 
     function getYears(categoria = null) {
-        console.log(categoria);
+        
         var data = {
             action: 'get_years',
             categoria: categoria,
@@ -91,11 +91,12 @@ $(document).ready(function () {
             data: data,
             dataType: 'JSON',
             success: function (response) {
-                console.log(response);
-                $('.year-options').empty();
+                
+                $('.year-button').empty().removeClass('active');
+                $('.month-button').removeClass('active');
                 if (response) {
                     response.forEach(function (element, index) {
-                        $('.year-options').append(element)
+                        $('.year-button').append(element)
                     });
                 }
 
@@ -106,8 +107,33 @@ $(document).ready(function () {
         });
     }
 
-    function getMonths(params) {
+    function getMonths(cat=null, year=null) {
+        
+        var data = {
+            action: 'get_months',
+            categoria: cat,
+            year: year
+        }
 
+        $.ajax({
+            type: "post",
+            url: ajax_var.url,
+            data: data,
+            dataType: 'JSON',
+            success: function (response) {
+                
+                $('.month-button').empty().removeClass('active');
+                if (response) {
+                    response.forEach(function (element, index) {
+                        $('.month-button').append(element)
+                    });
+                }
+
+            }, error: function (xhr, ajaxOptions, thrownError) {
+                console.log(xhr.status);
+                console.log(thrownError);
+            }
+        });
     }
 
 });

@@ -4,6 +4,7 @@
   font-size: 30px;
   font-weight: bold;
 }
+
 .category-list .grid {
   margin: 90px 0;
   display: -webkit-box;
@@ -20,6 +21,7 @@
       -ms-flex-direction: row;
           flex-direction: row;
 }
+
 .category-list .grid .item {
   width: 31%;
   border: 2px solid #b2b2b2;
@@ -30,9 +32,11 @@
   -webkit-transition: all 300ms;
   transition: all 300ms;
 }
+
 .category-list .grid .item:nth-child(3n) {
   margin-right: 0;
 }
+
 .category-list .grid .item .icon {
   width: 50px;
   height: 50px;
@@ -49,15 +53,18 @@
   -webkit-transition: all 300ms;
   transition: all 300ms;
 }
+
 .category-list .grid .item .icon svg {
   width: 40px;
   height: 40px;
   -webkit-transition: all 300ms;
   transition: all 300ms;
 }
+
 .category-list .grid .item .icon svg path {
   fill: #b2b2b2;
 }
+
 .category-list .grid .item .title {
   font-size: 16px;
   font-weight: bold;
@@ -68,6 +75,7 @@
   transition: all 300ms;
   color: #b2b2b2;
 }
+
 .category-list .grid .item .desc {
   padding: 5px 0;
   margin: 5px 0;
@@ -75,24 +83,30 @@
   transition: all 300ms;
   color: #b2b2b2;
 }
+
 .category-list .grid .item:hover {
   border-color: #8cc540;
   -webkit-transform: translateY(-30px);
           transform: translateY(-30px);
 }
+
 .category-list .grid .item:hover .icon {
   background-color: #8cc540;
 }
+
 .category-list .grid .item:hover .icon svg {
   width: 40px;
   height: 40px;
 }
+
 .category-list .grid .item:hover .icon svg path {
   fill: #fff;
 }
+
 .category-list .grid .item:hover .title {
   color: #0e526c;
 }
+
 .category-list .grid .item:hover .desc {
   color: #8cc540;
 }

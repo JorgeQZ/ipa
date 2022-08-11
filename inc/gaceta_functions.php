@@ -1,14 +1,16 @@
 <?php
 
 // Enqueue Script
-add_action( 'wp_enqueue_scripts', 'load_Content_scripts' );
 function load_Content_scripts() {
-	wp_enqueue_script('load_content', get_template_directory_uri().'/js/load_content.js', '1.0', false );
+	wp_enqueue_script('load_content', get_template_directory_uri().'/js/load_content.js');
 	wp_localize_script('load_content', 'ajax_var', array(
 		'url' => admin_url('admin-ajax.php'),
 		'nonce' => wp_create_nonce('ajaxnonce')
 	));
 }
+
+add_action( 'wp_enqueue_scripts', 'load_Content_scripts' );
+
 
 
 // Change cat
@@ -49,6 +51,8 @@ function change_category() {
 
 		$data_post = array(
 			'post_title' => get_the_title( $post->ID ),
+			'post_date_year' => get_the_date( 'Y', $post->ID),
+			'post_date_month' => get_the_date( 'm', $post->ID),
 			'post_date' => get_the_date( $post->ID),
 			'post_image' => $post_image[0],
 			'post_link' => $post_link,
@@ -89,17 +93,17 @@ function get_years() {
 	$the_query = new WP_QUERY ( $args );
 	while ( $the_query->have_posts() ) :
 		$the_query->the_post();
-		$item = "<li value='".get_the_date( 'Y' )."'>".get_the_date( 'Y' )."</li>";
+		$item = "<option value='".get_the_date( 'Y' )."'>".get_the_date( 'Y' )."</option>";
 		array_push($post_content, $item);
 	endwhile;
 
 	if($post_content == '' || $post_content == null){
-			$item = "<li>Sin resultados de busqueda</li>";
+			$item = "<option>Sin resultados de busqueda</option>";
 
 			array_push($post_content, $item);
 	}
 
-	array_unshift($post_content,"<li>Selecciona el año de interes</li>");
+	array_unshift($post_content,"<option>Selecciona el año de interes</option>");
 
 	$post_content = array_unique($post_content);
 	$post_content= array_values($post_content);
@@ -113,69 +117,58 @@ function get_years() {
 
 
 
-// //Get Meses
-// add_action( 'wp_ajax_nopriv_Load_Content_Meses', 'Load_Content_Meses');
-// add_action( 'wp_ajax_Load_Content_Meses', 'Load_Content_Meses' );
-
-// function Load_Content_Meses() {
-// 	$categoria = $_REQUEST['categoria'];
-// 	$fecha = $_REQUEST['fecha'];
-
-// 		$args = array(
-// 			'post_type' 		=> 'acervo-digital',
-// 			'post_status' 		=> 'publish',
-//       'posts_per_page' => -1,
-// 			'orderby' => 'publish_date',
-//       'order' => 'DESC',
-//       'ignore_sticky_posts' => 1,
-//       'year'  => $fecha,
-// 			'tax_query'			=> array(
-// 			// 'relation' 		=> 'AND',
-// 				array(
-// 					'taxonomy' => 'acervo_categorias',
-// 					'field' => 'slug',
-// 					'terms' => $categoria
-// 				)
-// 			)
-// 		);
+//Get Meses
 
 
-// 	$post_content = array();
-// 	$the_query = new WP_QUERY ( $args );
+add_action( 'wp_ajax_nopriv_get_months', 'get_months');
+add_action( 'wp_ajax_get_months', 'get_months' );
 
-// 	while ( $the_query->have_posts() ) :
-// 		$the_query->the_post();
-// 		$current_id = $post->ID;
+function get_months() {
+	$args = array(
+		'post_type' => 'gaceta',
+		'post_status' 		=> 'publish',
+		'posts_per_page' => -1,
+		'orderby' => 'publish_date',
+		'order' => 'DESC',
+		'ignore_sticky_posts' => 1,
+		'date_query' => array(
+			'relation' => 'OR',
+			array('year' => $_POST['year'])
+		),
+		'tax_query'			=> array(
+			array(
+				'taxonomy' => 'gaceta_categorias',
+				'field' => 'slug',
+				'terms' => $_POST['categoria']
+			)
+		)
+	);
 
-// 		$content_t = get_the_content($current_id);
-//     $text = wp_trim_words($content_t, '35');
-//     //20200230
-//     $item = "
-//             <option value='".get_the_date( 'm' )."'>
-//             ".get_the_date( 'F' )."
-//         </option>
-//     ";
-// 		array_push($post_content, $item);
-// 	endwhile;
+	$post_content = array();
+	$the_query = new WP_QUERY ( $args );
+	while ( $the_query->have_posts() ) :
+		$the_query->the_post();
+		$item = "<option value='".get_the_date( 'm' )."'>".get_the_date( 'F' )."</option>";
+		array_push($post_content, $item);
+	endwhile;
 
-// 	if($post_content == '' || $post_content == null){
-// 		$item = "<option>Sin resultados de busqueda</option>";
+	if($post_content == '' || $post_content == null){
+			$item = "<option>Sin resultados de busqueda</option>";
 
-// 		array_push($post_content, $item);
-//   }
+			array_push($post_content, $item);
+	}
 
-//   //array_unshift($post_content,"<option>Selecciona el mes de interes</option>");
+	array_unshift($post_content,"<option>Selecciona el mes de interes</option>");
 
-//   $post_content = array_unique($post_content);
-//   $post_content= array_values($post_content);
+	$post_content = array_unique($post_content);
+	$post_content= array_values($post_content);
 
 
-// 	header( "Content-Type: application/json" );
-// 	echo json_encode($post_content);
+	header( "Content-Type: application/json" );
+	echo json_encode($post_content);
 
-// 	exit;
-// }
-
+	exit;
+}
 
 //Get Contenido
 // add_action( 'wp_ajax_nopriv_Load_Content', 'Load_Content' );
