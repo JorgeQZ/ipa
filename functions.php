@@ -55,9 +55,9 @@ function ipa_scripts() {
     }
 
 
-    // if(is_page_template( 'page-nosotros.php' )){
+    if(is_page_template( 'nosotros' )){
         wp_enqueue_style('nosotros', get_template_directory_uri().'/css/nosotros.css', [], 'all');
-    // }
+    }
 
 
     if(is_page_template( 'page-representacion.php' )){
