@@ -24,7 +24,8 @@
             </div>
 
             <div class="search-bar">
-                <input type="search" placeholder="Buscar...">
+                <!-- <input type="search" placeholder="Buscar..."> -->
+                <?php get_search_form(); ?>
             </div>
             <div class="cont_search">
                 <?php echo file_get_contents(get_template_directory_uri(  ).'/img/search-icon.svg'); ?>

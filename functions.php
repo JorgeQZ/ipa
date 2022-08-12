@@ -73,6 +73,11 @@ function ipa_scripts() {
         wp_enqueue_style('gaceta', get_template_directory_uri().'/css/gaceta.css', [], 'all');
     }
 
+
+    if(is_page_template( 'single-miembro.php' ) || is_single('miembro') || is_singular('miembro')){
+        wp_enqueue_style('single-miembro', get_template_directory_uri().'/css/single-miembro.css', [], 'all');
+    }
+
     if(is_post_type_archive( 'gaceta' )){
         wp_enqueue_style('gaceta-single', get_template_directory_uri().'/css/gaceta-single.css', [], 'all');
     }
