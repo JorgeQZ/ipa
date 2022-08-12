@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<div class="main-container">
+<div class="main-container" style="padding: 90px">
 <?php
 $s=get_search_query();
 $args = array('s' =>$s);
@@ -18,11 +18,12 @@ if ( $the_query->have_posts() ) {
         }
     }else{
 ?>
-        <h2 style='font-weight:bold;color:#000'>Nothing Found</h2>
+        <h2 style='font-weight:bold;color:#000'>Sin Resultados</h2>
         <div class="alert alert-info">
-          <p>Sorry, but nothing matched your search criteria. Please try again with some different keywords.</p>
+          <p>Parece que no hay resultados de la busqueda que hiciste. Intenta con otra palabra.</p>
         </div>
 <?php } ?>
-</div>
 <?php get_sidebar(); ?>
+
+</div>
 <?php get_footer(); ?>
