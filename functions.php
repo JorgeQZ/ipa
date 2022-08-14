@@ -45,10 +45,6 @@ function ipa_scripts() {
     }
 
 
-    if(is_page_template( 'page-capacitacion.php' ) || is_post_type_archive( 'capacitacion' || is_singular('capacitacion') || is_single('capacitacion'))){
-        wp_enqueue_style('capacitacion', get_template_directory_uri().'/css/capacitacion.css', [], 'all');
-    }
-
 
     if(is_page_template( 'page-servicios.php' )){
         wp_enqueue_style('servicios', get_template_directory_uri().'/css/servicios.css', [], 'all');
@@ -74,12 +70,31 @@ function ipa_scripts() {
     }
 
 
-    if(is_page_template( 'single-miembro.php' ) || is_single('miembro') || is_singular('miembro')){
+    if( is_page_template( 'single-miembro.php' ) || 
+        is_single('miembro') || 
+        is_singular('miembro')){
         wp_enqueue_style('single-miembro', get_template_directory_uri().'/css/single-miembro.css', [], 'all');
+    }
+
+
+    if( is_page_template( 'page-capacitacion.php' ) || 
+        is_post_type_archive( 'capacitacion' ) || 
+        is_singular('capacitacion') ||
+        is_single('capacitacion')){
+        wp_enqueue_style('capacitacion', get_template_directory_uri().'/css/capacitacion.css', [], 'all');
     }
 
     if(is_post_type_archive( 'gaceta' )){
         wp_enqueue_style('gaceta-single', get_template_directory_uri().'/css/gaceta-single.css', [], 'all');
+    }
+
+
+    if( is_singular('servicio') || is_single( 'servicio' )){
+        wp_enqueue_style('single-servicio', get_template_directory_uri().'/css/single-servicio.css', [], 'all');
+    }
+
+    if(is_search()){
+        wp_enqueue_style('search', get_template_directory_uri().'/css/search.css', [], 'all');
     }
 
 }
@@ -354,5 +369,5 @@ function ipa_members_gaceta(){
 
       register_post_type( 'miembro', $args);
 }
-
+flush_rewrite_rules();
 ?>

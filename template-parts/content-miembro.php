@@ -1,4 +1,4 @@
-<?php get_header(); ?>
+
 <div class="main-content" style="padding: 60px">
     <div class="container">
         <div class="column">
@@ -50,6 +50,3 @@
         </div>
     </div>
 </div>
-<?php
-get_footer();
-?>

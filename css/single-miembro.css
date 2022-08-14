@@ -9,6 +9,7 @@
       -ms-flex-pack: center;
           justify-content: center;
 }
+
 .container .column {
   width: 50%;
   display: -webkit-box;
@@ -21,15 +22,18 @@
       -ms-flex-pack: center;
           justify-content: center;
 }
+
 .container .column .desc {
   margin: 10px;
   text-align: center;
   color: #0e526c;
   font-size: 20px;
 }
+
 .container .column .item {
   color: #0e526c;
 }
+
 .container .column .item .social-cont {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -42,6 +46,7 @@
           align-items: center;
   margin: 5px;
 }
+
 .container .column .item .social-cont .link {
   margin: 0 5px;
   padding: 0;
@@ -61,11 +66,13 @@
   transition: all 300ms;
   overflow: hidden;
 }
+
 .container .column .item .social-cont .link img {
   width: 30px;
   height: 30px;
   position: relative;
 }
+
 .container .column .item .social-cont .link:hover {
   background-color: #0e526c;
   -webkit-transform: scale(1.2);

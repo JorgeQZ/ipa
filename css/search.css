@@ -1,0 +1,90 @@
+.container {
+  padding: 30px 90px;
+  margin: 0 auto;
+  max-width: 1280px;
+}
+
+.container .title {
+  font-size: 30px;
+  font-weight: bold;
+  color: #0e526c;
+}
+
+.container .results li {
+  padding: 10px 5px;
+}
+
+.container .results li a {
+  font-size: 18px;
+}
+
+.container p {
+  font-size: 18px;
+}
+
+.container a {
+  font-weight: bold;
+  color: #0e526c;
+  text-decoration: none;
+  -webkit-transition: all 300ms;
+  transition: all 300ms;
+}
+
+.container a:hover {
+  color: #8cc540;
+}
+
+.container .pagenav ul > li {
+  text-transform: capitalize;
+}
+
+.container .search-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.container .search-form input[type="search"] {
+  width: 90%;
+  height: 100%;
+  font-size: 18px;
+  padding: 0px;
+  color: #0e526c;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  padding: 5px;
+  border: 1px solid #0e526c;
+}
+
+.container .search-form input[type="search"]:focus {
+  outline: none;
+}
+
+.container .search-form input[type="submit"] {
+  height: 50;
+  padding: 10px 30px;
+  color: #0e526c;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background-color: #8cc540;
+  border: none;
+  cursor: pointer;
+  -webkit-transition: all 300ms;
+  transition: all 300ms;
+}
+
+.container .search-form input[type="submit"]:focus {
+  outline: none;
+}
+
+.container .search-form input[type="submit"]:hover {
+  background-color: #0e526c;
+  color: white;
+}
+
+.container.active {
+  width: calc(100% - 90px);
+  border: 1px solid #8cc540;
+}

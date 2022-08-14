@@ -1,0 +1,88 @@
+@import "variables";
+.container{
+    padding: 30px 90px;
+    margin: 0 auto;
+    max-width: 1280px;
+
+    .title{
+        font-size: $title;
+        font-weight: bold;
+        color: $azul;
+    }
+
+    .results{
+        li{
+            padding: 10px 5px;
+            a{
+                font-size: $body;
+            }
+        }
+    }
+    p{
+     font-size: $body;   
+    }
+
+    a{
+        font-weight: bold;
+        color: $azul;
+        text-decoration: none;
+        transition: all 300ms ;
+        &:hover{
+            color: $verde;
+        }
+    }
+
+    .pagenav{
+        ul{
+            > li{
+                text-transform: capitalize;
+            }
+        }
+    }
+
+    
+        .search-form{
+            
+            display: flex;
+            input[type="search"]{
+                width: 90%;
+                height: 100%;
+                font-size: $body;
+                padding: 0px;
+                color: $azul;
+                appearance: none;
+                padding: 5px;
+                border: 1px solid $azul;
+                &:focus{
+                    outline: none;
+
+                }
+            }
+
+            input[type="submit"]{
+                height: 50;
+                padding: 10px 30px;
+                color: $azul;
+                appearance: none;
+                background-color: $verde;
+                border: none;
+                cursor: pointer;
+                transition: all 300ms;
+                &:focus{
+                    outline: none;
+
+                }
+
+                &:hover{
+                    background-color: $azul;
+                    color: white;
+                }
+            }
+        }
+
+        &.active{
+            width: calc(100% - 90px);
+            border: 1px solid $verde;
+        }
+    
+}

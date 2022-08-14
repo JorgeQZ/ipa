@@ -10,11 +10,13 @@
           justify-content: space-between;
   max-width: 100%;
   padding: 0;
-  min-height: calc(100vh - 90px);
+  min-height: calc( 100vh - 90px);
 }
+
 .gaceta-cont .column {
   padding-top: 100px;
 }
+
 .gaceta-cont .cat-tabs {
   width: 25%;
   max-width: 400px;
@@ -31,6 +33,7 @@
       -ms-flex-align: center;
           align-items: center;
 }
+
 .gaceta-cont .cat-tabs .menu-cat, .gaceta-cont .cat-tabs .menu-filter {
   list-style: none;
   margin: 0;
@@ -39,6 +42,7 @@
   max-width: 280px;
   min-width: 80%;
 }
+
 .gaceta-cont .cat-tabs .menu-cat li, .gaceta-cont .cat-tabs .menu-filter li {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -56,13 +60,16 @@
   -webkit-transition: all 300ms;
   transition: all 300ms;
 }
+
 .gaceta-cont .cat-tabs .menu-cat li.active, .gaceta-cont .cat-tabs .menu-filter li.active {
   color: #0e526c;
   font-weight: bold;
 }
+
 .gaceta-cont .cat-tabs .menu-cat li:hover, .gaceta-cont .cat-tabs .menu-filter li:hover {
   color: #0e526c;
 }
+
 .gaceta-cont .cat-tabs .menu-filter .year-button, .gaceta-cont .cat-tabs .menu-filter .month-button {
   -webkit-appearance: none;
      -moz-appearance: none;
@@ -86,13 +93,16 @@
   transition: all 300ms;
   text-transform: capitalize;
 }
+
 .gaceta-cont .cat-tabs .menu-filter .year-button option, .gaceta-cont .cat-tabs .menu-filter .month-button option {
   font-size: 24px;
 }
+
 .gaceta-cont .cat-tabs .menu-filter .year-button.active, .gaceta-cont .cat-tabs .menu-filter .month-button.active {
   color: #0e526c;
   font-weight: bold;
 }
+
 .gaceta-cont .grid-list {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -117,6 +127,7 @@
   padding-right: 30px;
   margin-bottom: 100px;
 }
+
 .gaceta-cont .grid-list .item {
   -webkit-box-flex: 1;
       -ms-flex: 1 0 30%;
@@ -146,6 +157,7 @@
   -webkit-transition: all 300ms;
   transition: all 300ms;
 }
+
 .gaceta-cont .grid-list .item .overlay {
   position: absolute;
   top: 0;
@@ -157,10 +169,12 @@
   -webkit-transition: all 300ms;
   transition: all 300ms;
 }
+
 .gaceta-cont .grid-list .item .title, .gaceta-cont .grid-list .item .desc {
   color: white;
   position: relative;
 }
+
 .gaceta-cont .grid-list .item:hover {
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
@@ -168,9 +182,11 @@
   -webkit-filter: grayscale(0);
           filter: grayscale(0);
 }
+
 .gaceta-cont .grid-list .item:hover .overlay {
   background-color: #8cc540;
 }
+
 .gaceta-cont .post-item {
   width: 25%;
   background-color: #f1f1f4;
@@ -178,17 +194,21 @@
   padding-right: 30px;
   max-width: 400px;
 }
+
 .gaceta-cont .post-item .featured-img {
   width: 100%;
 }
+
 .gaceta-cont .post-item .featured-img img {
   max-width: 100%;
 }
+
 .gaceta-cont .post-item .text {
   margin: 20px 0;
   color: #0e526c;
   letter-spacing: 1px;
 }
+
 .gaceta-cont .post-item .button {
   cursor: pointer;
   background-color: #0e526c;
@@ -202,6 +222,7 @@
   -webkit-transition: all 300ms;
   transition: all 300ms;
 }
+
 .gaceta-cont .post-item .button:hover {
   background-color: #8cc540;
 }

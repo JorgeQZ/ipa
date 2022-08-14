@@ -20,6 +20,11 @@ html, body{
     margin: 0;
 }
 
+.container{
+    padding: 30px 90px;
+    margin: 0 auto;
+    max-width: 1280px;
+}
 .alignfull{
     .wp-block-media-text{
         .wp-block-media-text__content{
